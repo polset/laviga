@@ -11,6 +11,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* ==================== 1. HEADER + CARRUSEL ==================== */
         /* Estilos personalizados para el menú de navegación */
         .menu-nav .navigation li a {
             position: relative;
@@ -122,291 +123,6 @@
         .hero-swiper-button-next::after{
             font-size: 12px;
             color: var(--color-neutral-00);
-        }
-        /*categorías*/
-        #categories-swiper {
-            width: 100%;
-            height: 270px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        #categories-swiper .swiper-slide {
-            width: auto;
-            height: auto;
-        }
-        #categories-swiper .swiper-pagination-bullet {
-            background-color: transparent;
-            border: 1px solid #686868;
-            opacity: 1;
-        }
-        #categories-swiper .swiper-pagination-bullet-active {
-            background-color: #686868 !important;
-            border: none;
-        }
-        .cate-card {
-            width: 176px;
-            min-height: 200px;
-            transition: all 0.2s ease;
-        }
-        .categories-swiper-button-next,
-        .categories-swiper-button-prev{
-            width: 53px;
-            height: 53px;
-            background-color: #eaeaea;
-        }
-        .categories-swiper-button-next::after,
-        .categories-swiper-button-prev::after{
-            font-size: 12px;
-            color: var(--color-neutral-40);
-        }
-
-        /* marcas */
-        #brands-swiper {
-            width: 100%;
-            height: auto;
-            margin-top: 2rem;
-            padding-bottom: 50px;
-        }
-
-        .brand-card {
-            transition: all 0.2s ease;
-            height: 162px;
-            border-radius: 10px;
-            margin: 5px;
-            width: 100%;
-        }
-
-        .brand-img {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #brands-swiper .swiper-slide {
-            height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #brands-swiper .swiper-wrapper {
-            align-items: stretch;
-        }
-
-        #brands-swiper .swiper-pagination-bullet {
-            background-color: transparent;
-            border: 1px solid #686868;
-            opacity: 1;
-        }
-
-        #brands-swiper .swiper-pagination-bullet-active {
-            background-color: #686868 !important;
-            border: none;
-        }
-
-        .brands-swiper-button-next,
-        .brands-swiper-button-prev {
-            width: 53px;
-            height: 53px;
-            background-color: #eaeaea;
-        }
-
-        .brands-swiper-button-next::after,
-        .brands-swiper-button-prev::after {
-            font-size: 12px;
-            color: var(--color-neutral-40);
-        }
-
-        #brands-swiper .swiper-pagination {
-            bottom: 0;
-        }
-        #benefits-swiper {
-            width: 100%;
-            height: auto;
-            margin-top: 2rem;
-            padding-bottom: 50px;
-            padding-left: 60px;
-            padding-right: 60px;
-        }
-        /* beneficios */
-        @media (max-width: 767px) {
-            #benefits-swiper {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-        
-
-        .benefit-card {
-            height: 150px;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: all 0.2s ease;
-        }
-
-        .benefit-card-franja {
-            border-radius: 6px 0 0 6px;
-        }
-
-        #benefits-swiper .swiper-slide {
-            height: auto;
-            padding: 10px;
-        }
-
-        #benefits-swiper .swiper-pagination-bullet {
-            background-color: transparent;
-            border: 1px solid #686868;
-            opacity: 1;
-        }
-
-        #benefits-swiper .swiper-pagination-bullet-active {
-            background-color: #686868 !important;
-            border: none;
-        }
-
-        .benefits-swiper-button-next,
-        .benefits-swiper-button-prev {
-            width: 53px;
-            height: 53px;
-            background-color: #eaeaea;
-        }
-
-        .benefits-swiper-button-prev {
-            left: 5px;
-        }
-
-        .benefits-swiper-button-next {
-            right: 5px;
-        }
-
-        .benefits-swiper-button-next::after,
-        .benefits-swiper-button-prev::after {
-            font-size: 12px;
-            color: var(--color-neutral-40);
-        }
-
-        #benefits-swiper .swiper-pagination {
-            bottom: 0;
-        }
-
-        /*destacados*/
-        
-        /* Mobile layout (default) */
-        @media (max-width: 767px) {
-            .destacados-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(4, 1fr);
-                gap: 12px;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(1) {
-                grid-column: span 2 / span 2;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(2) {
-                grid-row-start: 2;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(3) {
-                grid-row-start: 2;
-            }
-            
-            
-            
-            .destacados-grid .destacado-item:nth-child(5) {
-                grid-row-start: 3;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(6) {
-                grid-column: span 2 / span 2;
-            }
-        }
-
-        /* Tablet and Desktop layout */
-        @media (min-width: 768px) {
-            .destacados-grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                gap: 24px; 
-            }
-
-            .destacados-grid .destacado-item:nth-child(1) {
-                grid-column: span 2 / span 2;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(2) {
-                grid-column-start: 3;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(3) {
-                grid-column-start: 4;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(4) {
-                grid-row-start: 2;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(5) {
-                grid-row-start: 2;
-            }
-            
-            .destacados-grid .destacado-item:nth-child(6) {
-                grid-column: span 2 / span 2;
-                grid-row-start: 2;
-            }
-        }
-
-        .destacados-grid img {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        /*pie de pagina*/
-
-        .social-icon i {
-            font-size: 16px;
-        }
-
-        .icon-container {
-            width: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .icon-container i {
-            font-size: 18px;
-        }
-
-        @media (max-width: 767px) {
-            .footer-column {
-                margin-bottom: 2rem;
-            }
-            
-            .footer-column:last-child {
-                margin-bottom: 0;
-            }
-            
-            .footer-grid {
-                gap: 0;
-            }
-            
-            .social-icons {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 0.5rem;
-            }
-            
-            .social-icon {
-                margin: 0 auto;
-            }
         }
 
         /* Dropdown Menu */
@@ -577,15 +293,298 @@
                 display: none;
             }
         }
+        
+        /* ==================== 2. CATEGORÍAS ==================== */
+        #categories-swiper {
+            width: 100%;
+            height: 270px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #categories-swiper .swiper-slide {
+            width: auto;
+            height: auto;
+        }
+        #categories-swiper .swiper-pagination-bullet {
+            background-color: transparent;
+            border: 1px solid #686868;
+            opacity: 1;
+        }
+        #categories-swiper .swiper-pagination-bullet-active {
+            background-color: #686868 !important;
+            border: none;
+        }
+        .cate-card {
+            width: 176px;
+            min-height: 200px;
+            transition: all 0.2s ease;
+        }
+        .categories-swiper-button-next,
+        .categories-swiper-button-prev{
+            width: 53px;
+            height: 53px;
+            background-color: #eaeaea;
+        }
+        .categories-swiper-button-next::after,
+        .categories-swiper-button-prev::after{
+            font-size: 12px;
+            color: var(--color-neutral-40);
+        }
+        
+        /* ==================== 3. MARCAS ==================== */
+        #brands-swiper {
+            width: 100%;
+            height: auto;
+            margin-top: 2rem;
+            padding-bottom: 50px;
+        }
+
+        .brand-card {
+            transition: all 0.2s ease;
+            height: 162px;
+            border-radius: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+
+        .brand-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #brands-swiper .swiper-slide {
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #brands-swiper .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        #brands-swiper .swiper-pagination-bullet {
+            background-color: transparent;
+            border: 1px solid #686868;
+            opacity: 1;
+        }
+
+        #brands-swiper .swiper-pagination-bullet-active {
+            background-color: #686868 !important;
+            border: none;
+        }
+
+        .brands-swiper-button-next,
+        .brands-swiper-button-prev {
+            width: 53px;
+            height: 53px;
+            background-color: #eaeaea;
+        }
+
+        .brands-swiper-button-next::after,
+        .brands-swiper-button-prev::after {
+            font-size: 12px;
+            color: var(--color-neutral-40);
+        }
+
+        #brands-swiper .swiper-pagination {
+            bottom: 0;
+        }
+        
+        /* ==================== 4. BENEFICIOS ==================== */
+        #benefits-swiper {
+            width: 100%;
+            height: auto;
+            margin-top: 2rem;
+            padding-bottom: 50px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        
+        @media (max-width: 767px) {
+            #benefits-swiper {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        
+        .benefit-card {
+            height: 150px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        .benefit-card-franja {
+            border-radius: 6px 0 0 6px;
+        }
+
+        #benefits-swiper .swiper-slide {
+            height: auto;
+            padding: 10px;
+        }
+
+        #benefits-swiper .swiper-pagination-bullet {
+            background-color: transparent;
+            border: 1px solid #686868;
+            opacity: 1;
+        }
+
+        #benefits-swiper .swiper-pagination-bullet-active {
+            background-color: #686868 !important;
+            border: none;
+        }
+
+        .benefits-swiper-button-next,
+        .benefits-swiper-button-prev {
+            width: 53px;
+            height: 53px;
+            background-color: #eaeaea;
+        }
+
+        .benefits-swiper-button-prev {
+            left: 5px;
+        }
+
+        .benefits-swiper-button-next {
+            right: 5px;
+        }
+
+        .benefits-swiper-button-next::after,
+        .benefits-swiper-button-prev::after {
+            font-size: 12px;
+            color: var(--color-neutral-40);
+        }
+
+        #benefits-swiper .swiper-pagination {
+            bottom: 0;
+        }
+        
+        /* ==================== 5. DESTACADOS ==================== */
+        /* Mobile layout (default) */
+        @media (max-width: 767px) {
+            .destacados-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                gap: 12px;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(1) {
+                grid-column: span 2 / span 2;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(2) {
+                grid-row-start: 2;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(3) {
+                grid-row-start: 2;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(5) {
+                grid-row-start: 3;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(6) {
+                grid-column: span 2 / span 2;
+            }
+        }
+
+        /* Tablet and Desktop layout */
+        @media (min-width: 768px) {
+            .destacados-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 24px; 
+            }
+
+            .destacados-grid .destacado-item:nth-child(1) {
+                grid-column: span 2 / span 2;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(2) {
+                grid-column-start: 3;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(3) {
+                grid-column-start: 4;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(4) {
+                grid-row-start: 2;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(5) {
+                grid-row-start: 2;
+            }
+            
+            .destacados-grid .destacado-item:nth-child(6) {
+                grid-column: span 2 / span 2;
+                grid-row-start: 2;
+            }
+        }
+
+        .destacados-grid img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        /* ==================== 6. PIE DE PÁGINA ==================== */
+        .social-icon i {
+            font-size: 16px;
+        }
+
+        .icon-container {
+            width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-container i {
+            font-size: 18px;
+        }
+
+        @media (max-width: 767px) {
+            .footer-column {
+                margin-bottom: 2rem;
+            }
+            
+            .footer-column:last-child {
+                margin-bottom: 0;
+            }
+            
+            .footer-grid {
+                gap: 0;
+            }
+            
+            .social-icons {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .social-icon {
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header + Carrusel -->  
+    <!-- 1. HEADER + CARRUSEL -->  
     <section class="header-hero relative w-full h-[769px] lg:h-[880px] 2xl:h-[880px]">
 
         <!-- Header -->
         <header class="relative z-10 w-full bg-[linear-gradient(to_bottom,rgba(104,104,104,0.2),rgba(206,206,206,0.2))]">
-            <!-- Desktop Header) -->
+            <!-- Desktop Header -->
             <div class="hidden lg:block">
                 <!-- Top Header Section -->
                 <div class="top-header py-4">
@@ -624,33 +623,33 @@
                         <ul class="navigation flex items-center gap-12">
                             <li><a href="/" class="text-neutral-00 font-bold text-sm active">Inicio</a></li>
                             <li class="flex items-center gap-1.5 relative group">
-                                <a href="#" class="text-neutral-00 font-bold text-sm">Categorías</a>
+                                <a href="/categorias.html" class="text-neutral-00 font-bold text-sm">Categorías</a>
                                 <img src="./src/images/chevron-down-white.svg" alt="Expand" class="w-4 h-4">
                                 
-                                <!-- Dropdown menu -->
+                                <!-- Dropdown menu para categorias -->
                                 <div class="absolute left-0 right-0 top-5/6 hidden group-hover:block z-50">
                                     <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
                                         <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
                                             <!-- Primera columna - Categorías principales -->
                                             <div class="navdesplegable-main">
                                                 <ul class="space-y-2">
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="materiales">Materiales de construcción</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="ferreteria">Artículos de ferretería</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="herramientas">Herramientas eléctricas e inalámbricas</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="electricos">Materiales eléctricos</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="acabados">Materiales para acabados</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="saneamiento">Materiales para obra de saneamiento</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sanitarios">Materiales sanitarios</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-navdesplegable="materiales">Materiales de construcción</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="ferreteria">Artículos de ferretería</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="herramientas">Herramientas eléctricas e inalámbricas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="electricos">Materiales eléctricos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="acabados">Materiales para acabados</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="saneamiento">Materiales para obra de saneamiento</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="sanitarios">Materiales sanitarios</a></li>
                                                 </ul>
                                             </div>
                                             
                                             <!-- Segunda columna - Subcategorías -->
                                             <div class="navdesplegable-sub border-l border-[#EAEAEA] pl-6">
                                                 <ul class="space-y-2 navdesplegable-container">
-                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="fraguas">Fraguas</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="pegamentos">Pegamentos para pisos y revestimientos</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="selladores">Selladores y espumas expansivas</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="yeso">Yeso</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subnavdesplegable="fraguas">Fraguas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subnavdesplegable="pegamentos">Pegamentos para pisos y revestimientos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subnavdesplegable="selladores">Selladores y espumas expansivas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subnavdesplegable="yeso">Yeso</a></li>
                                                 </ul>
                                             </div>
                                             
@@ -690,7 +689,7 @@
                                 </div>
                             </li>
                             <li class="flex items-center gap-1.5 relative group">
-                                <a href="#" class="text-neutral-00 font-bold text-sm">Marcas</a>
+                                <a href="/marcas.html" class="text-neutral-00 font-bold text-sm">Marcas</a>
                                 <img src="./src/images/chevron-down-white.svg" alt="Expand" class="w-4 h-4">
                                 
                                 <!-- Dropdown menu for Marcas -->
@@ -700,45 +699,45 @@
                                             <!-- Primera columna - Marcas principales -->
                                             <div class="navdesplegable-main">
                                                 <ul class="space-y-2">
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="moldimix">Moldimix</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sika">Sika</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="soldiflex">Soldiflex</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="soldimix">Soldimix</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="tekbond">Tek Bond</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="weber">Weber / Webeber/ Celima</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zaditivos">Z Aditivos</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zunicontriz">Z Unicontriz</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="milagro">El Milagroa</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="3m">3M</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="asa">ASA</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="nortron">Nortron</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sandflex">Sand Flex</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="dewalt">Dewalt</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="blackdecker">Black & Decker</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zaditivos">Z Aditivos</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zunicontriz">Z Unicontriz</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="nortron">Nortron</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="milagro">El Milagroa</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-navdesplegable="moldimix">Moldimix</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="sika">Sika</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="soldiflex">Soldiflex</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="soldimix">Soldimix</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="tekbond">Tek Bond</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="weber">Weber / Webeber/ Celima</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="zaditivos">Z Aditivos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="zunicontriz">Z Unicontriz</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="milagro">El Milagroa</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="3m">3M</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="asa">ASA</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="nortron">Nortron</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="sandflex">Sand Flex</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="dewalt">Dewalt</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="blackdecker">Black & Decker</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="zaditivos">Z Aditivos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="zunicontriz">Z Unicontriz</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="nortron">Nortron</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-navdesplegable="milagro">El Milagroa</a></li>
                                                 </ul>
                                             </div>
                                             
                                             <!-- Segunda columna - Submarcas -->
                                             <div class="navdesplegable-sub border-l border-[#EAEAEA] pl-6">
                                                 <ul class="space-y-2 navdesplegable-container">
-                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="selladores">Selladores y espumas expansivas</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="fraguas">Fraguas</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="pegamentos">Pegamentos pisos y revestimentos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subnavdesplegable="selladores">Selladores y espumas expansivas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subnavdesplegable="fraguas">Fraguas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subnavdesplegable="pegamentos">Pegamentos pisos y revestimentos</a></li>
                                                 </ul>
                                             </div>
                                             
                                             <!-- Tercera columna - Tipos -->
                                             <div class="navdesplegable-type border-l border-[#EAEAEA] pl-6">
                                                 <ul class="space-y-2 navdesplegable-tipocontainer">
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40">Espuma expansiva.</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40">Sellador de poliuretano.</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40">Sellador de silicona.</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40">Sellador de superficie.</a></li>
-                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40">General.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Espuma expansiva.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de poliuretano.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de silicona.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de superficie.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">General.</a></li>
                                                 </ul>
                                             </div>
                                             
@@ -756,7 +755,63 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="#" class="text-neutral-00 font-bold text-sm">Servicios</a></li>
+                            <li class="flex items-center gap-1.5 relative group">
+                                <a href="#" class="text-neutral-00 font-bold text-sm">Servicios</a>
+                                <img src="./src/images/chevron-down-white.svg" alt="Expand" class="w-4 h-4">
+                            
+                                
+                                <!-- Dropdown menu for Servicios -->
+                                <div class="absolute left-0 right-0 top-5/6 hidden group-hover:block z-50">
+                                    <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
+                                        <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
+                                            <!-- Primera columna - Categorías principales -->
+                                            <div class="navdesplegable-main">
+                                                <ul class="space-y-2">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="incendio">Sistema contra incendio</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="presion">Sistema de presión constante</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="ventilacion">Sistema de ventilación mecánico</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Segunda columna - Subcategorías -->
+                                            <div class="navdesplegable-sub border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-container">
+                                                    <li><a href="/sistema-contra-incendio.html" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="agua">Agua contra incendio</a></li>
+                                                    <li><a href="/sistema-contra-incendio.html" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="deteccion">Detección y alarma contra incendio</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Tercera columna - Tipos -->
+                                            <div class="navdesplegable-type border-l border-neutral-20 pl-6">
+                                                
+                                            </div>
+                                            
+                                            <!-- Cuarta columna - Banners -->
+                                            <div class="navdesplegable-banners">
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div class="banner-item">
+                                                        <a href="#" class="relative">
+                                                            <img src="./src/images/dropdown/navser-01.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item ">
+                                                        <a href="#" class="relative">
+                                                            <img src="./src/images/dropdown/navser-02.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item col-span-2">
+                                                        <a href="#" class="relative">
+                                                            <img src="./src/images/dropdown/navser-03.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+
                             <li><a href="#" class="text-neutral-00 font-bold text-sm">Sectores de negocio</a></li>
                         </ul>
                     </div>
@@ -802,12 +857,12 @@
                 </div>
             </div>
         </header>
+        
         <!-- Carrusel -->
         <div class="swiper" id="hero-swiper">
             <div class="swiper-wrapper">
                 <!-- Item 1 -->
                 <div class="swiper-slide bg-[url(/src/images/img-hero-1.png)] bg-cover">
-                    <!-- <img src="/src/images/img-hero-1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> -->
                     <div class="absolute inset-0 bg-primary-40 opacity-20"></div>
                     
                     <div class="container mx-auto px-4">
@@ -824,7 +879,6 @@
                 </div>
                 <!-- Item 2 -->
                 <div class="swiper-slide bg-[url(/src/images/img-hero-2.png)] bg-cover">
-                    <!-- <img src="/src/images/img-hero-2.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> -->
                     <div class="absolute inset-0 bg-primary-40 opacity-20"></div>
                     <div class="container mx-auto px-4">
                         <div class="absolute z-10 flex justify-start items-center h-full w-xl sm:w-2xl md:w-3xl lg:w-5xl xl:w-6xl 2xl:w-[1436px] inset-0 m-auto">
@@ -840,7 +894,6 @@
                 </div>
                 <!-- Item 3 -->
                 <div class="swiper-slide bg-[url(/src/images/img-hero-3.png)] bg-cover">
-                    <!-- <img src="/src/images/img-hero-3.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> -->
                     <div class="absolute inset-0 bg-primary-40 opacity-20"></div>
                     <div class="container mx-auto px-4">
                         <div class="absolute z-10 flex  lg:justify-end items-center h-full w-xl sm:w-2xl md:w-3xl lg:w-5xl xl:w-6xl 2xl:w-[1436px] inset-0 m-auto">
@@ -862,29 +915,26 @@
             <!-- Navigation buttons -->
             <div class="swiper-button-next hero-swiper-button-next rounded-full"></div>
             <div class="swiper-button-prev hero-swiper-button-prev rounded-full"></div>
-
         </div>
-
     </section>
 
-    <!-- Sección de categorías -->
+    <!-- 2. CATEGORÍAS -->
     <section class="categories-section py-12">
         <div class="container mx-auto px-4">
             <h5 class="mb-6">Categorias</h5>
             
             <!-- Swiper -->
             <div class="swiper" id="categories-swiper">
-                
                 <div class="swiper-wrapper md:px-8">
-                        <!-- Card 1 -->
-                        <div class="swiper-slide" style="width: auto;">
-                            <div class="cate-card flex flex-col items-center bg-white p-4">
-                                <div class="cate-card-img w-[105px] h-[105px] flex items-center justify-center mb-6">
-                                    <img src="./src/images/cate-card-img-1.png" class="max-w-full max-h-full object-contain" alt="Materiales de construcción">
-                                </div>
-                                <h3 class="text-base/[18px] font-bold text-neutral-70 text-center">Materiales de construcción</h3>
+                    <!-- Card 1 -->
+                    <div class="swiper-slide" style="width: auto;">
+                        <div class="cate-card flex flex-col items-center bg-white p-4">
+                            <div class="cate-card-img w-[105px] h-[105px] flex items-center justify-center mb-6">
+                                <img src="./src/images/cate-card-img-1.png" class="max-w-full max-h-full object-contain" alt="Materiales de construcción">
                             </div>
+                            <h3 class="text-base/[18px] font-bold text-neutral-70 text-center">Materiales de construcción</h3>
                         </div>
+                    </div>
                     
                     <!-- Card 2 -->
                     <div class="swiper-slide" style="width: auto;">
@@ -945,6 +995,7 @@
                             <h3 class="text-base/[18px] font-bold text-neutral-70 text-center">Materiales sanitarios</h3>
                         </div>
                     </div>
+                    
                     <!-- Card 8 -->
                     <div class="swiper-slide" style="width: auto;">
                         <div class="cate-card flex flex-col items-center bg-white p-4">
@@ -954,6 +1005,7 @@
                             <h3 class="text-base/[18px] font-bold text-neutral-70 text-center">Materiales sanitarios</h3>
                         </div>
                     </div>
+                    
                     <!-- Card 9 -->
                     <div class="swiper-slide" style="width: auto;">
                         <div class="cate-card flex flex-col items-center bg-white p-4">
@@ -964,6 +1016,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- Pagination -->
                 <div class="swiper-pagination categories-swiper-pagination"></div>
                 
@@ -974,7 +1027,7 @@
         </div>
     </section>
     
-    <!-- Sección marcas -->
+    <!-- 3. MARCAS -->
     <section class="brands-section py-12">
         <div class="container mx-auto px-4">
             <h5>Marcas</h5>
@@ -1178,8 +1231,7 @@
         </div>
     </section>
 
-
-    <!-- sección beneficios -->
+    <!-- 4. BENEFICIOS -->
     <section class="benefits-section py-12">
         <div class="container mx-auto px-4">
             <h5 class="text-2xl font-bold text-neutral-70 mb-10">Beneficios para nuestros clientes</h5>
@@ -1276,7 +1328,6 @@
                             </div>
                         </div>
                     </div>
-                
                 </div>
                 
                 <!-- Pagination -->
@@ -1289,8 +1340,7 @@
         </div>
     </section>
 
-
-    <!-- sección destacados -->
+    <!-- 5. DESTACADOS -->
     <section class="destacados-section py-12">
         <div class="container mx-auto px-4">
             <h5 class="text-2xl font-bold text-neutral-70 mb-10">Productos destacados</h5>
@@ -1329,8 +1379,7 @@
         </div>
     </section>
 
-
-    <!-- pie de página -->
+    <!-- 6. PIE DE PÁGINA -->
     <footer class="bg-primary-30 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-4">
@@ -1385,7 +1434,7 @@
                             <a href="mailto:ventas@laviga.com">ventas@laviga.com</a>
                         </li>
                     </ul>
-        </div>
+                </div>
                 
                 <!-- Columna 3 - Nosotros -->
                 <div class="mb-8 md:mb-0">
@@ -1396,7 +1445,7 @@
                     </ul>
 
                     <h6 class="underline">Oficinas y centros de servicios</h6>
-    </div>
+                </div>
                 
                 <!-- Columna 4 - Atención al cliente -->
                 <div>
@@ -1407,22 +1456,16 @@
                         <li><a href="#">Privacidad y seguridad</a></li>
                         <li><a href="#">Preguntas frecuentes</a></li>
                         <li><a href="#">Comprobantes electrónicos</a></li>
-                        
                     </ul>
-                    
-                    
                 </div>
+                
                 <!-- Columna 5 - Pagos libro -->
                 <div>
                     <h6 class="mb-6 underline">Portal de pagos</h6>
                     
-                    
-                    
                     <div class="mb-4">
                         <h5 class="text-xl font-bold mb-3"></h5>
-                        <a href="#">
-                            
-                        </a>
+                        <a href="#"></a>
                     </div>
 
                     <ul class="space-y-3">
@@ -1446,187 +1489,186 @@
         </div>
     </footer>
 
+    <!-- SCRIPTS JS -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- Initialize Swiper -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Hero Carousel
-    const heroSwiper = new Swiper('#hero-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.hero-swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.hero-swiper-button-next',
-            prevEl: '.hero-swiper-button-prev',
-        },
-                    });
-       
-    // Categories Carousel
-    const categoriesSwiper = new Swiper('#categories-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 12,
-        centeredSlides: false,
-        grabCursor: true,
-        observer: true,
-        observeParents: true,
-        watchOverflow: true,
-        pagination: {
-            el: '.categories-swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.categories-swiper-button-next',
-            prevEl: '.categories-swiper-button-prev',
-        },
-        breakpoints: {
-            // when window width is < 640px
-            0: {
-                slidesPerView: 2,
-                spaceBetween: 0,
+    <!-- Initialize Swiper -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // 1. HEADER + CARRUSEL
+        const heroSwiper = new Swiper('#hero-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
             },
-            // when window width is >= 640px
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 12,
+            pagination: {
+                el: '.hero-swiper-pagination',
+                clickable: true,
             },
-            // when window width is >= 768px
-            768: {
-                slidesPerView: 4,
-                spaceBetween: 12,
+            navigation: {
+                nextEl: '.hero-swiper-button-next',
+                prevEl: '.hero-swiper-button-prev',
             },
-            // when window width is >= 1024px
-            1024: {
-                slidesPerView: 5,
-                spaceBetween: 12,
-            },
-            // when window width is >= 1280px
-            1280: {
-                slidesPerView: 7.2,
-                spaceBetween: 0,
-            },
-        }
-    });
-
-    // Brands Carousel
-    const brandsSwiper = new Swiper('#brands-swiper', {
-        slidesPerView: 5,
-        grid: {
-            rows: 2,
-            fill: 'row'
-        },
-        spaceBetween: 20,
-        observer: true,
-        observeParents: true,
-        pagination: {
-            el: '.brands-swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.brands-swiper-button-next',
-            prevEl: '.brands-swiper-button-prev',
-        },
-        breakpoints: {
-            // when window width is >= 1280px
-            1280: {
-                slidesPerView: 5,
-                grid: {
-                    rows: 2,
-                    fill: 'row'
-                }
-            },
-            // when window width is >= 1024px
-            1024: {
-                slidesPerView: 4,
-                grid: {
-                    rows: 2,
-                    fill: 'row'
-                }
-            },
-            // when window width is >= 768px
-            768: {
-                slidesPerView: 3,
-                grid: {
-                    rows: 2,
-                    fill: 'row'
-                }
-            },
-            // when window width is >= 640px
-            640: {
-                slidesPerView: 2,
-                grid: {
-                    rows: 2,
-                    fill: 'row'
-                }
-            },
-            // when window width is < 640px
-            0: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-                grid: {
-                    rows: 2,
-                    fill: 'row'
-                }
-            }
-        }
-    });
-                    
-    // Benefits Carousel
-    const benefitsSwiper = new Swiper('#benefits-swiper', {
-        slidesPerView: 3.9,
-        spaceBetween: 14,
-        observer: true,
-        observeParents: true,
-        pagination: {
-            el: '.benefits-swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.benefits-swiper-button-next',
-            prevEl: '.benefits-swiper-button-prev',
-        },
-        breakpoints: {
-            // when window width is >= 1280px
-            1280: {
-                slidesPerView: 3.9,
-                spaceBetween: 14,
-            },
-            // when window width is >= 1024px
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 0,
-            },
-            // when window width is >= 768px
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-            },
-            // when window width is < 768px
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-            }
-        }
-    });
-
         });
+           
+        // 2. CATEGORÍAS
+        const categoriesSwiper = new Swiper('#categories-swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 12,
+            centeredSlides: false,
+            grabCursor: true,
+            observer: true,
+            observeParents: true,
+            watchOverflow: true,
+            pagination: {
+                el: '.categories-swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.categories-swiper-button-next',
+                prevEl: '.categories-swiper-button-prev',
+            },
+            breakpoints: {
+                // when window width is < 640px
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 12,
+                },
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 12,
+                },
+                // when window width is >= 1024px
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 12,
+                },
+                // when window width is >= 1280px
+                1280: {
+                    slidesPerView: 7.2,
+                    spaceBetween: 0,
+                },
+            }
+        });
+
+        // 3. MARCAS
+        const brandsSwiper = new Swiper('#brands-swiper', {
+            slidesPerView: 5,
+            grid: {
+                rows: 2,
+                fill: 'row'
+            },
+            spaceBetween: 20,
+            observer: true,
+            observeParents: true,
+            pagination: {
+                el: '.brands-swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.brands-swiper-button-next',
+                prevEl: '.brands-swiper-button-prev',
+            },
+            breakpoints: {
+                // when window width is >= 1280px
+                1280: {
+                    slidesPerView: 5,
+                    grid: {
+                        rows: 2,
+                        fill: 'row'
+                    }
+                },
+                // when window width is >= 1024px
+                1024: {
+                    slidesPerView: 4,
+                    grid: {
+                        rows: 2,
+                        fill: 'row'
+                    }
+                },
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 3,
+                    grid: {
+                        rows: 2,
+                        fill: 'row'
+                    }
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 2,
+                    grid: {
+                        rows: 2,
+                        fill: 'row'
+                    }
+                },
+                // when window width is < 640px
+                0: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                    grid: {
+                        rows: 2,
+                        fill: 'row'
+                    }
+                }
+            }
+        });
+                        
+        // 4. BENEFICIOS
+        const benefitsSwiper = new Swiper('#benefits-swiper', {
+            slidesPerView: 3.9,
+            spaceBetween: 14,
+            observer: true,
+            observeParents: true,
+            pagination: {
+                el: '.benefits-swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.benefits-swiper-button-next',
+                prevEl: '.benefits-swiper-button-prev',
+            },
+            breakpoints: {
+                // when window width is >= 1280px
+                1280: {
+                    slidesPerView: 3.9,
+                    spaceBetween: 14,
+                },
+                // when window width is >= 1024px
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                },
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                // when window width is < 768px
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                }
+            }
+        });
+    });
     </script>
 
     <!-- Dropdown Menu Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize dropdowns (works for both categories and brands)
+            // Initialize dropdowns (works for categories, brands and services)
             function initDropdown(containerSelector) {
                 const mainItems = document.querySelectorAll(containerSelector + ' .navdesplegable-item');
                 const subItems = document.querySelectorAll(containerSelector + ' .navdesplegable-subitem');
@@ -1642,8 +1684,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Add active class to clicked item
                         this.classList.add('font-bold', 'active');
                         
-                        // Get the data-categoria attribute
-                        const categoria = this.getAttribute('data-categoria');
+                        // Get the data attribute (either data-navdesplegable or data-categoria)
+                        const categoria = this.getAttribute('data-navdesplegable') || this.getAttribute('data-categoria');
                         console.log(`Selected category: ${categoria}`);
                         
                         // Select the first subitem by default
@@ -1658,7 +1700,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Handle sub item clicks
                 subItems.forEach(item => {
                     item.addEventListener('click', function(e) {
-                        e.preventDefault();
+                        // Only prevent default if the link doesn't have an href or it's "#"
+                        const href = this.getAttribute('href');
+                        if (!href || href === '#') {
+                            e.preventDefault();
+                        }
                         
                         // Remove active class from all sub items in this dropdown
                         subItems.forEach(subcat => subcat.classList.remove('font-bold', 'active'));
@@ -1666,16 +1712,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Add active class to clicked item
                         this.classList.add('font-bold', 'active');
                         
-                        // Get the data-subcategoria attribute
-                        const subcategoria = this.getAttribute('data-subcategoria');
+                        // Get the data attribute (either data-subnavdesplegable or data-subcategoria)
+                        const subcategoria = this.getAttribute('data-subnavdesplegable') || this.getAttribute('data-subcategoria');
                         console.log(`Selected subcategory: ${subcategoria}`);
                     });
                 });
             }
             
-            // Initialize both dropdowns
+            // Initialize all dropdowns
             initDropdown('.navigation li:nth-child(2)'); // Categories dropdown
             initDropdown('.navigation li:nth-child(3)'); // Brands dropdown
+            initDropdown('.navigation li:nth-child(4)'); // Services dropdown
         });
     </script>
 </body>
