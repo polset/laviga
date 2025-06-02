@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "flowbite/dist/flowbite.css";
+@import "swiper/css/bundle";
+@import "./css/header.css";
+
+@layer base {
+  body {
+    @apply bg-background-00 font-montserrat;
+  }
+  h1 {
+    @apply text-[56px]/17 font-bold;
+  }
+  h2 {
+    @apply text-5xl/15 font-bold;
+  }
+  h3 {
+    @apply text-4xl/12 font-bold;
+  }
+  h4 {
+    @apply text-[28px]/9 font-bold;
+  }
+  h5 {
+    @apply text-2xl/7 font-bold;
+  }
+  @media (max-width: 767px) {
+    h5 {
+      @apply text-xl/6 font-bold;
+    }
+  }
+  h6 {
+    @apply text-xl/6 font-bold;
+  }
+  @media (max-width: 767px) {
+    h6 {
+      @apply text-base/5 font-bold;
+    }
+  }
+  p {
+    @apply text-base/6 font-normal;
+  }
+  a {
+    @apply text-base font-normal;
+  }
+  span {
+    @apply text-base font-normal;
+  }
+  label {
+    @apply text-base font-normal;
+  }
+  input {
+    @apply text-base font-normal;
+  }
+  button {
+    @apply text-base font-normal;
+  }
+  select {
+    @apply text-base font-normal;
+  }
+  textarea {
+    @apply text-base font-normal;
+  }
+  option {
+    @apply text-base font-normal;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-neutral-00 rounded-lg p-6 shadow-xl;
+  }
+  .paragraph2 {
+    @apply text-sm/4.5 font-normal text-neutral-50;
+  }
+  .paragraph3 {
+    @apply text-xs/4 font-normal text-neutral-50;
+  }
+}

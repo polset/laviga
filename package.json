@@ -1,0 +1,22 @@
+{
+  "name": "viga",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @tailwindcss/cli -i ./assets/input.css -o ./assets/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^3.4.17",
+    "flowbite": "^3.1.2",
+    "swiper": "^11.2.6"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

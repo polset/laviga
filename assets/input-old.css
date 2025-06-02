@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@import "swiper/css/bundle";
+@layer base {
+  body {
+    @apply bg-background-00 font-montserrat;
+  }
+  h1 {
+    @apply text-[56px]/17 font-bold;
+  }
+  h2 {
+    @apply text-5xl/15 font-bold ;
+  }
+  h3 {
+    @apply text-4xl/12 font-bold;
+  }
+  h4 {
+    @apply text-[28px]/9 font-bold;
+  }
+  h5 {
+    @apply text-2xl/7 font-bold;
+  }
+  @media (max-width: 767px) {
+    h5 {
+      @apply text-xl/6 font-bold;
+    }
+  }
+  h6 {
+    @apply text-xl/6 font-bold;
+  }
+  @media (max-width: 767px) {
+    h6 {
+      @apply text-base/5 font-bold;
+    }
+  }
+  p {
+    @apply text-base/6 font-normal;
+  }
+  a {
+    @apply text-base font-normal;
+  }
+  span {
+    @apply text-base font-normal;
+  }
+  label {
+    @apply text-base font-normal;
+  }
+  input {
+    @apply text-base font-normal;
+  }
+  button {
+    @apply text-base font-normal;
+  }
+  select {
+    @apply text-base font-normal;
+  }
+  textarea {
+    @apply text-base font-normal;
+  }
+  option {
+    @apply text-base font-normal;
+  }
+}
+@theme {
+        --font-montserrat: "Montserrat", sans-serif; 
+        --color-primary-00: #00B2FF;
+        --color-primary-10: #00a9f3;
+        --color-primary-20: #0092d1;
+        --color-primary-30: #0073a5;
+        --color-primary-40: #004461;
+        --color-secondary-00: #FF66D1;
+        --color-secondary-10: #DA57B3;
+        --color-secondary-20: #AC458D;
+        --color-secondary-30: #662953;
+        --color-neutral-00: #FFFFFF;
+        --color-neutral-10: #FAFAFA;
+        --color-neutral-20: #EAEAEA;
+        --color-neutral-30: #9A9A9A;
+        --color-neutral-40: #686868;
+        --color-neutral-50: #282828;
+        --color-success-00: #EBFFE7;
+        --color-success-10: #BBFFAA;
+        --color-success-20: #29CF00;
+        --color-warning-00: #fffae4;
+        --color-warning-10: #ffeea8;
+        --color-warning-20: #ffcd06;
+        --color-error-00: #FFC3CF;
+        --color-error-10: #FF718D;
+        --color-error-20: #D9002B;
+        --color-background-00: #FFFFFF;
+        --color-background-10: #F9F9F9;
+
+        --spacing-card: 390px;
+}
+@layer components {
+
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--rounded-lg);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow-xl);
+  }
+  .paragraph2 {
+    @apply text-sm/4.5 font-normal text-neutral-50;
+  }
+  .paragraph3 {
+    @apply text-xs/4 font-normal text-neutral-50;
+  }
+
+}

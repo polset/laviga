@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single - La Viga | Materiales de Construcción</title>
+    <link rel="stylesheet" href="./assets/output.css">
+    <link rel="icon" href="./assets/images/logo-vector1.svg" type="image/svg+xml">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+   <!-- 1. HEADER SOLO INICIO -->
+    <!-- navegation -->
+    <style>
+        .menu-nav .navigation li a {
+            position: relative;
+        }
+        .menu-nav .navigation li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -8px;
+            left: 0;
+            background-color: #00B2FF;
+            transition: width 0.3s ease;
+        }
+        .menu-nav .navigation li a:hover::after,
+        .menu-nav .navigation li a.active::after {
+            width: 100%;
+        }
+        .menu-nav .navigation li:first-child a.active::after {
+            width: 100%;
+        }
+        .menu-nav .navigation li:first-child a {
+            position: relative;
+        }
+    </style>
+
+    <!-- buscador -->
+    <style>
+        /* Estilos para las sugerencias de búsqueda */
+        #search-suggestions,
+        #mobile-search-suggestions {
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-height: 450px;
+            overflow-y: auto;
+        }
+        
+        /* Estilo para los enlaces de sugerencias */
+        #search-suggestions a,
+        #mobile-search-suggestions a {
+            display: block;
+            transition: color 0.2s ease;
+        }
+        
+        /* Limitar ancho máximo del dropdown en pantallas grandes */
+        @media (min-width: 768px) {
+            #search-suggestions {
+                max-width: 638px;
+            }
+        }
+        
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 767px) {
+            #mobile-search-suggestions {
+                max-height: 80vh;
+            }
+        }
+        
+        /* Estilo para el scrollbar */
+        #search-suggestions::-webkit-scrollbar,
+        #mobile-search-suggestions::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        #search-suggestions::-webkit-scrollbar-track,
+        #mobile-search-suggestions::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        #search-suggestions::-webkit-scrollbar-thumb,
+        #mobile-search-suggestions::-webkit-scrollbar-thumb {
+            background: #c2c2c2;
+            border-radius: 10px;
+        }
+        
+        #search-suggestions::-webkit-scrollbar-thumb:hover,
+        #mobile-search-suggestions::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+    </style>
+
+    <!-- mega menu -->
+    <style>
+        /* mega menu */
+        .navdesplegable-item,
+        .navdesplegable-subitem,
+        .navdesplegable-tipocontainer a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .navdesplegable-item {
+            color: #686868;
+        }
+        .navdesplegable-item:hover, 
+        .navdesplegable-item.active {
+            color: #00B2FF !important;
+        }
+        .navdesplegable-subitem {
+            color: #00B2FF;
+        }
+        .navdesplegable-subitem:hover, 
+        .navdesplegable-subitem.active {
+            color: #00B2FF !important;
+        }
+        .navdesplegable-tipocontainer a {
+            color: #81848B;
+        }
+        .navdesplegable-tipocontainer a:hover {
+            color: #00B2FF !important;
+        }
+        .navigation li.group .absolute > div {
+            max-height: 698px;
+        }
+        .navigation li.group .absolute > div > div {
+            height: 100%;
+            max-height: 650px;
+        }
+        .navdesplegable-main {
+            max-height: 650px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc transparent;
+            padding-right: 10px;
+        }
+        .navdesplegable-main::-webkit-scrollbar {
+            width: 4px;
+        }
+        .navdesplegable-main::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .navdesplegable-main::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 4px;
+        }
+        .navdesplegable-sub,
+        .navdesplegable-type {
+            height: auto;
+            max-height: 650px;
+        }
+        .navdesplegable-banners {
+            height: 650px;
+            display: flex;
+            flex-direction: column;
+        }
+        .navdesplegable-banners .grid {
+            height: 100%;
+            grid-template-rows: 1fr 1fr;
+        }
+        .banner-item {
+            height: 100%;
+        }
+        .banner-item a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+        .banner-item a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .banner-item:hover a img {
+            transform: scale(1.03);
+        }
+        .navdesplegable-main a::after,
+        .navdesplegable-sub a::after,
+        .navdesplegable-type a::after {
+            display: none !important;
+        }
+        .navdesplegable-main a:hover::after,
+        .navdesplegable-sub a:hover::after,
+        .navdesplegable-type a:hover::after {
+            width: 0 !important;
+        }
+        @media (max-width: 1440px) {
+            .group:hover .absolute.left-0 .bg-neutral-00 {
+                position: absolute;
+                width: 100vw;
+                max-width: 100vw;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .menu-nav .navigation li.group {
+            position: static;
+        }
+        .menu-nav .navigation li.group .absolute {
+            left: 0;
+            right: 0;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        @media (max-width: 1023px) {
+            .menu-nav .navigation li.group .absolute .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .navdesplegable-sub,
+            .navdesplegable-type {
+                border-left: none;
+                border-top: 1px solid #EAEAEA;
+                padding-left: 0;
+                padding-top: 1rem;
+                margin-top: 1rem;
+            }
+            .navdesplegable-banners {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- producto individual -->
+     <style>
+    .main-image-swiper {
+        height: 460px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .main-image-swiper .swiper-pagination-bullet {
+        background-color: transparent;
+        border: 1px solid #686868;
+        opacity: 1;
+        width: 8px;
+        height: 8px;
+    }
+    
+    .main-image-swiper .swiper-pagination-bullet-active {
+        background-color: #686868 !important;
+        border: none;
+    }
+    
+    .thumbnails-container {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 9;
+        width: auto;
+    }
+    
+    .thumbs-swiper {
+        height: auto;
+        width: auto;
+    }
+    
+    .thumbs-swiper .swiper-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .thumbs-swiper .swiper-slide {
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    .thumbnail {
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+    
+    .thumbnail:hover {
+        border-color: var(--color-primary-00) !important;
+    }
+    
+    .colors-swiper {
+        max-width: 350px;
+        padding: 0 20px;
+    }
+    
+    .quantity-control {
+        min-width: 120px;
+    }
+    
+    /* Estilos específicos para dispositivos móviles */
+    .card-prod {
+        width: 100%;
+        height: 240px;
+        border-radius: 8px;
+        background-color: white;
+        transition: all 0.2s ease;
+    }
+    
+    
+    @media (max-width: 767px) {
+        .card-prod {
+            width: 100%;
+        }
+    }
+     </style>
+
+    <!-- productos complementarios y similares -->
+     <style>
+        /*complementarios*/
+    #complementarios-swiper {
+        width: 100%;
+        height: 270px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #complementarios-swiper .swiper-slide {
+        width: auto;
+        height: auto;
+    }
+    #complementarios-swiper .swiper-pagination-bullet {
+        background-color: transparent;
+        border: 1px solid #686868;
+        opacity: 1;
+    }
+    #complementarios-swiper .swiper-pagination-bullet-active {
+        background-color: #686868 !important;
+        border: none;
+    }
+    .cate-card {
+        width: 176px;
+        min-height: 200px;
+        transition: all 0.2s ease;
+    }
+    .complementarios-swiper-button-next,
+    .complementarios-swiper-button-prev{
+        width: 53px;
+        height: 53px;
+        background-color: #eaeaea;
+    }
+    .complementarios-swiper-button-next::after,
+    .complementarios-swiper-button-prev::after{
+        font-size: 12px;
+        color: var(--color-neutral-40);
+    }
+     </style>
+    
+    
+
+</head>
+<body>
+    <!-- Header -->  
+    <section class="header-hero relative w-full h-auto">
+
+        <!-- Header -->
+        <header class="relative z-10 w-full">
+            <!-- Desktop Header) -->
+            <div class="hidden lg:block">
+                <!-- Top Header Section -->
+                <div class="top-header py-4">
+                    <div class="container mx-auto px-4 flex justify-between items-center">
+                        <!-- Logo -->
+                        <div class="logo-box">
+                            <a href="/" class="logo w-40 block">
+                                <img src="./assets/images/logo-la-viga-color.svg" alt="La Viga Logo" class="w-full">
+                            </a>
+                        </div>
+
+                        <!-- Right Side Items -->
+                        <div class="flex items-center gap-4">
+                            <!-- Search Bar -->
+                            <div class="search-bar flex items-center bg-[rgba(234,234,234,0.3)] rounded-full px-5 py-[5px] w-[638px] mr-10 relative">
+                                <img src="./assets/images/search-icon-gray.svg" alt="Search" class="w-5 h-5 mr-3">
+                                <input type="text" id="search-input" placeholder="Buscar en la Viga" class="bg-transparent w-full placeholder-neutral-40 border-none focus:outline-none text-neutral-40 font-bold text-sm">
+                                
+                                <!-- Search Suggestions Dropdown -->
+                                <div id="search-suggestions" class="absolute left-0 right-0 top-full mt-2 bg-white rounded-lg shadow-lg z-50 hidden">
+                                    <div class="p-5">
+                                        <!-- Columna 1: Marcas -->
+                                        <div class="flex">
+                                            <div class="w-1/3 pr-4">
+                                                <p class="text-neutral-40 font-bold text-sm mb-3">Marcas</p>
+                                                <ul class="space-y-3">
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">SIKA</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">APU</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">SOL</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">LARK</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Divisor vertical -->
+                                            <div class="w-px bg-neutral-30 mx-4"></div>
+                                            
+                                            <!-- Columna 2: Productos -->
+                                            <div class="w-1/3 px-4">
+                                                <p class="text-neutral-40 font-bold text-sm mb-3">Productos</p>
+                                                <ul class="space-y-3">
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo epóxico 5kg</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo epóxico para anclajes Anchorfix</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo para pegado de Metales Sikaflex 117 Metal Force</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo y sellador de juntas Sikaflex 11FC Plus Blanco</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Divisor vertical -->
+                                            <div class="w-px bg-neutral-30 mx-4"></div>
+                                            
+                                            <!-- Columna 3: Categorías -->
+                                            <div class="w-1/3 pl-4">
+                                                <p class="text-neutral-40 font-bold text-sm mb-3">Categorías</p>
+                                                <ul class="space-y-3">
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Porcelanato</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Ceramica y Mayolicas</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Clavos</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Herramientas de obra pesada</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Herramientas electricas</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Inalámbricas</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Lavaderos de cocina</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Quote Button -->
+                            <button class="quote-button flex items-center gap-2 bg-primary-00 text-neutral-00 font-bold text-sm py-[14px] px-5 rounded-full transition-all duration-200">
+                                <img src="./assets/images/file-icon.svg" alt="File" class="w-5 h-5">
+                                <span class="paragraph2 text-neutral-00 font-bold">Cotizar</span>
+                            </button>
+
+                            <!-- Cart Button -->
+                            <button class="cart p-2.5 hover:bg-neutral-40 hover:bg-opacity-20 rounded-full transition-all duration-200">
+                                <img src="./assets/images/cart-icon-gray.svg" alt="Cart" class="w-6 h-6">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- navegation desktop -->
+                <nav class="menu-nav w-full py-5 bg-neutral-10">
+                    <div class="container mx-auto px-4 flex justify-end">
+                        <ul class="navigation flex items-center gap-12">
+                            <li><a href="/" class="text-neutral-40 font-bold text-sm">Inicio</a></li>
+                            <li class="flex items-center gap-1.5 relative group">
+                                <a href="/categorias.html" class="text-neutral-40 font-bold text-sm ">Categorías</a>
+                                <img src="./assets/images/chevron-down-gray.svg" alt="Expand" class="w-4 h-4">
+                                
+                                <!-- Dropdown menu -->
+                                <div class="absolute left-0 right-0 top-[83%] hidden group-hover:block z-50">
+                                    <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
+                                        <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
+                                            <!-- Primera columna - Categorías principales -->
+                                            <div class="navdesplegable-main">
+                                                <ul class="space-y-2">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="materiales">Materiales de construcción</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="ferreteria">Artículos de ferretería</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="herramientas">Herramientas eléctricas e inalámbricas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="electricos">Materiales eléctricos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="acabados">Materiales para acabados</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="saneamiento">Materiales para obra de saneamiento</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sanitarios">Materiales sanitarios</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Segunda columna - Subcategorías -->
+                                            <div class="navdesplegable-sub border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-container">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="fraguas">Fraguas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="pegamentos">Pegamentos para pisos y revestimientos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="selladores">Selladores y espumas expansivas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="yeso">Yeso</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Tercera columna - Tipos -->
+                                            <div class="navdesplegable-type border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-tipocontainer">
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Extra fuerte.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">General.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Interior.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Piscina.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Porcelanato.</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Cuarta columna - Banners -->
+                                            <div class="navdesplegable-banners">
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div class="banner-item">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/cat-dropdown-img-car50-2.png" alt="Artículos de ferretería" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item ">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/cat-dropdown-img-car50-1.png" alt="Materiales para acabados" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item col-span-2">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/cat-dropdown-img-car100.png" alt="Materiales de construcción" >
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-1.5 relative group">
+                                <a href="/marcas.html" class="text-neutral-40 font-bold text-sm active">Marcas</a>
+                                <img src="./assets/images/chevron-down-gray.svg" alt="Expand" class="w-4 h-4">
+                                
+                                <!-- Dropdown menu for Marcas -->
+                                <div class="absolute left-0 right-0 top-[83%] hidden group-hover:block z-50">
+                                    <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
+                                        <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
+                                            <!-- Primera columna - Marcas principales -->
+                                            <div class="navdesplegable-main">
+                                                <ul class="space-y-2">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="moldimix">Moldimix</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sika">Sika</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="soldiflex">Soldiflex</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="soldimix">Soldimix</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="tekbond">Tek Bond</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="weber">Weber / Webeber/ Celima</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zaditivos">Z Aditivos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zunicontriz">Z Unicontriz</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="milagro">El Milagroa</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="3m">3M</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="asa">ASA</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="nortron">Nortron</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sandflex">Sand Flex</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="dewalt">Dewalt</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="blackdecker">Black & Decker</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zaditivos">Z Aditivos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zunicontriz">Z Unicontriz</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="nortron">Nortron</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="milagro">El Milagroa</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Segunda columna - Submarcas -->
+                                            <div class="navdesplegable-sub border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-container">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="selladores">Selladores y espumas expansivas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="fraguas">Fraguas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="pegamentos">Pegamentos pisos y revestimentos</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Tercera columna - Tipos -->
+                                            <div class="navdesplegable-type border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-tipocontainer">
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Espuma expansiva.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de poliuretano.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de silicona.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de superficie.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">General.</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Cuarta columna - Banner único -->
+                                            <div class="navdesplegable-banners">
+                                                <div class="h-full">
+                                                    <div class="banner-item h-full">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/mar-dropdown-banner.png" alt="Sika" class="w-full h-full object-cover rounded">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-1.5 relative group">
+                                <a href="#" class="text-neutral-40 font-bold text-sm">Servicios</a>
+                                <img src="./assets/images/chevron-down-gray.svg" alt="Expand" class="w-4 h-4">
+                            
+                                
+                                <!-- Dropdown menu for Servicios -->
+                                <div class="absolute left-0 right-0 top-[83%] hidden group-hover:block z-50">
+                                    <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
+                                        <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
+                                            <!-- Primera columna - Categorías principales -->
+                                            <div class="navdesplegable-main">
+                                                <ul class="space-y-2">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="incendio">Sistema contra incendio</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="presion">Sistema de presión constante</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="ventilacion">Sistema de ventilación mecánico</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Segunda columna - Subcategorías -->
+                                            <div class="navdesplegable-sub border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-container">
+                                                    <li><a href="/sistema-contra-incendio.html" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="agua">Agua contra incendio</a></li>
+                                                    <li><a href="/sistema-contra-incendio.html" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="deteccion">Detección y alarma contra incendio</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Tercera columna - Tipos -->
+                                            <div class="navdesplegable-type border-l border-neutral-20 pl-6">
+                                                
+                                            </div>
+                                            
+                                            <!-- Cuarta columna - Banners -->
+                                            <div class="navdesplegable-banners">
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div class="banner-item">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/navser-01.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item ">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/navser-02.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item col-span-2">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/navser-03.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li><a href="#" class="text-neutral-40 font-bold text-sm">Sectores de negocio</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Mobile Header  -->
+            <div class="lg:hidden">
+                <!-- First fila: logo + otros -->
+                <div class="flex items-center justify-between py-4 px-4">
+                    <!-- Logo -->
+                    <div class="logo-box">
+                        <a href="/" class="logo block">
+                            <img src="./assets/images/logo-la-viga-color.svg" alt="La Viga Logo" class="w-24">
+                        </a>
+                    </div>
+
+                    <!-- Right Side Items -->
+                    <div class="flex items-center gap-3">
+                        <!-- Quote Button (icon only) -->
+                        <button class="w-8 h-8 flex items-center justify-center bg-primary-00 rounded-full">
+                            <img src="./assets/images/cotizar-mobile-icon.svg" alt="Cotizar" class="w-4 h-4">
+                        </button>
+
+                        <!-- Cart Button -->
+                        <button class="p-2">
+                            <img src="./assets/images/cart-icon-gray.svg" alt="Cart" class="w-5 h-5">
+                        </button>
+
+                        <!-- Hamburger Menu -->
+                        <button class="p-2">
+                            <img src="./assets/images/menu-mobile-icon-gray.svg" alt="Menu" class="w-5 h-5">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Second fila: barra de búsqueda -->
+                <div class="px-4 pb-4">
+                    <div class="search-bar flex items-center bg-[rgba(234,234,234,0.2)] rounded-full px-3 py-2 w-full">
+                        <img src="./assets/images/search-icon-gray.svg" alt="Search" class="w-4 h-4 mr-2">
+                        <input type="text" placeholder="Buscar en La Viga" class="bg-transparent w-full placeholder-neutral-40 border-none focus:outline-none text-neutral-40 font-semibold text-sm">
+                    </div>
+                </div>
+            </div>
+        </header>
+       
+    </section>
+
+
+    <!-- breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="container mx-auto px-4 py-6">
+            <nav aria-label="Breadcrumb">
+                <ul class="flex items-center">
+                    <li class="flex items-center"><a href="/" class="text-neutral-40 text-sm">Inicio</a></li>
+                    <li class="flex items-center mx-1"><img src="./assets/images/chevron-right-gray.svg" alt="chevron-right" class="w-4 h-4"></li>
+                    <li class="flex items-center"><a href="/marcas.html" class="text-neutral-40 text-sm">Marcas</a></li>
+                    <li class="flex items-center mx-1"><img src="./assets/images/chevron-right-gray.svg" alt="chevron-right" class="w-4 h-4"></li>
+                    <li class="flex items-center"><a href="/marcas-sika.html" class="text-neutral-40 text-sm">Sika</a></li>
+                    <li class="flex items-center mx-1"><img src="./assets/images/chevron-right-gray.svg" alt="chevron-right" class="w-4 h-4"></li>
+                    <li class="flex items-center"><a href="/marcas-single.html" class="text-neutral-40 text-sm font-bold">Pegamento para pisos y revestimentos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- producto detalle principal -->
+    <section>
+        <div class="container mx-auto px-4 py-6">
+            <!-- Producto individual -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-14">
+                <!-- Galería de imágenes del producto -->
+                <div class="product-gallery relative">
+
+                    <!-- Miniaturas -->
+                    <div class="thumbnails-container absolute top-0 left-0 w-full">
+                        <div class="swiper thumbs-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="thumbnail border border-primary-00 rounded-lg p-1">
+                                        <div class="w-[46px] h-[46px] bg-white rounded overflow-hidden">
+                                            <img src="./assets/images/product-image-thumb1.png" alt="Thumbnail 1" class="w-full h-full object-contain">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumbnail border border-neutral-20 rounded-lg p-1">
+                                        <div class="w-[46px] h-[46px] bg-white rounded overflow-hidden">
+                                            <img src="./assets/images/product-image-thumb2.png" alt="Thumbnail 2" class="w-full h-full object-contain">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumbnail border border-neutral-20 rounded-lg p-1">
+                                        <div class="w-[46px] h-[46px] bg-white rounded overflow-hidden">
+                                            <img src="./assets/images/product-image-thumb3.png" alt="Thumbnail 3" class="w-full h-full object-contain">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagen principal con navegación de swiper -->
+                    <div class="main-image-container relative mb-4 h-[520px]">
+                        <!-- Swiper container para la imagen principal -->
+                        <div class="swiper main-image-swiper !z-0">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="w-full h-[420px] flex items-center justify-center bg-white rounded-lg overflow-hidden">
+                                        <img src="./assets/images/sika-fragua-ejemplo.png" alt="Fragua Color Plus Terracota" class="max-w-full max-h-full object-contain">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="w-full h-[420px] flex items-center justify-center bg-white rounded-lg overflow-hidden">
+                                        <img src="./assets/images/sika-fragua-ejemplo.png" alt="Fragua Color Plus Terracota variante 2" class="max-w-full max-h-full object-contain">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="w-full h-[420px] flex items-center justify-center bg-white rounded-lg overflow-hidden">
+                                        <img src="./assets/images/sika-fragua-ejemplo.png" alt="Fragua Color Plus Terracota variante 3" class="max-w-full max-h-full object-contain">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Paginación (puntos) -->
+                            <div class="swiper-pagination main-image-pagination"></div>
+                        </div>
+                        
+                        <!-- Botones de navegación -->
+                        <div class="main-image-swiper-button-prev absolute top-1/2 -translate-y-1/2 left-4 w-[53px] h-[53px] bg-neutral-20 rounded-full z-9 flex items-center justify-center cursor-pointer">
+                            <img src="./assets/images/chevron-left-gray.svg" alt="Anterior" class="w-[12px] h-[12px]">
+                        </div>
+                        <div class="main-image-swiper-button-next absolute top-1/2 -translate-y-1/2 right-4 w-[53px] h-[53px] bg-neutral-20 rounded-full z-9 flex items-center justify-center cursor-pointer">
+                            <img src="./assets/images/chevron-right-gray.svg" alt="Siguiente" class="w-[12px] h-[12px]">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <!-- Información del producto -->
+                <div class="product-info space-y-8">
+                    <!-- Encabezado del producto -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-neutral-40 text-xs">WEBER</span>
+                            <span class="text-neutral-40 text-xs text-right">SKU: 1234567889 / Código Interno: 45678576</span>
+                        </div>
+                        <h1 class="text-3xl lg:text-4xl font-bold text-neutral-90 tracking-tighter">Fragua impermeable</h1>
+                    </div>
+                    
+                    <!-- Selector de colores -->
+                    <div>
+                        <p class="text-neutral-40 mb-1.5">Color: Terracota</p>
+                        
+                        <div class="colors-carousel relative max-w-[348px]">
+                            <!-- Carousel de colores -->
+                            <div class="swiper colors-swiper">
+                                <div class="swiper-wrapper">
+                                    <!-- Fila 1 -->
+                                    <div class="swiper-slide">
+                                        <div class="flex gap-3.5">
+                                            <div class="w-8 h-8 rounded-full bg-[#BC6C2C] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#FAE7D8] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#FFF6EE] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#EDDC2A] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#333ED2] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#FFEEFE] border border-neutral-20"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Fila 2 -->
+                                    <div class="swiper-slide">
+                                        <div class="flex gap-3.5">
+                                            <div class="w-8 h-8 rounded-full bg-[#1D8A36] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#4E544F] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-white border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#DE1D1D] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#FFE8E8] border border-neutral-20"></div>
+                                            <div class="w-8 h-8 rounded-full bg-[#FFB6B6] border border-neutral-20"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Botones de navegación -->
+                            <div class="colors-swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-5 w-10 h-10 bg-neutral-20 rounded-full z-9 flex items-center justify-center cursor-pointer">
+                                <img src="./assets/images/colors-chevron-left.svg" alt="Anterior" class="w-[10px] h-[10px]">
+                            </div>
+                            <div class="colors-swiper-button-next absolute top-1/2 -translate-y-1/2 -right-5 w-10 h-10 bg-neutral-20 rounded-full z-9 flex items-center justify-center cursor-pointer">
+                                <img src="./assets/images/colors-chevron-right.svg" alt="Siguiente" class="w-[10px] h-[10px]">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Agregar al carrito -->
+                    <div>
+                        <p class="text-neutral-90 text-xs mb-3">Caja de 12 bolsas x 12kg</p>
+                        
+                        <div class="flex items-center gap-3.5">
+                            <!-- Control de cantidad -->
+                            <div class="quantity-control flex items-center border border-neutral-90 rounded-full h-12 overflow-hidden">
+                                <button class="decrease w-12 h-12 flex items-center justify-center">
+                                    <img src="./assets/images/dash-icon.svg" alt="Menos" class="w-4">
+                                </button>
+                                <span class="quantity text-neutral-90 text-sm font-bold px-4">1</span>
+                                <button class="increase w-12 h-12 flex items-center justify-center">
+                                    <img src="./assets/images/plus-icon.svg" alt="Más" class="w-4">
+                                </button>
+                            </div>
+                            
+                            <!-- Botón Agregar al carrito -->
+                            <button class="add-to-cart max-w-[260px] bg-primary-00 text-white font-bold text-sm py-3 px-8 rounded-full h-12 flex-grow transition-all hover:bg-primary-20">
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Detalles adicionales -->
+                    <div class="space-y-1.5">
+                        <p class="text-neutral-40 text-sm font-bold">Peso referencial: 12 kg</p>
+                        <p class="text-neutral-40 text-xs">*El despacho de este material esta sujeto a políticas de distribución.</p>
+                        <p class="text-neutral-40 text-xs">*Imagen referencial</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- producto ABAJO más detalles -->
+    <section id="pxmas">
+        <div class="container mx-auto px-4">
+            <div class="bg-neutral-10 px-28 py-9">
+                <!-- Columna izquierda - Características -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-28">
+                    <div class="columna">
+                        <!-- Título de características -->
+                        <div class="mb-6">
+                            <h3 class="text-neutral-40 font-bold text-sm mb-2">Características del producto</h3>
+                            <div class="h-px w-full bg-neutral-30"></div>
+                        </div>
+                        
+                        <!-- Filas de características -->
+                        <div class="overflow-hidden">
+                            <!-- Fila 1 - Marca -->
+                            <div class="grid grid-cols-2 bg-neutral-20 p-7">
+                                <div class="text-neutral-40 text-xs">Marca</div>
+                                <div class="text-neutral-40 text-xs">WEBER</div>
+                            </div>
+                            
+                            <!-- Fila 2 - Presentación -->
+                            <div class="grid grid-cols-2 bg-white p-7">
+                                <div class="text-neutral-40 text-xs">Presentación</div>
+                                <div class="text-neutral-40 text-xs">Bolsa de 1 kg</div>
+                            </div>
+                            
+                            <!-- Fila 3 - Uso -->
+                            <div class="grid grid-cols-2 bg-neutral-20 p-7">
+                                <div class="text-neutral-40 text-xs">Uso</div>
+                                <div class="text-neutral-40 text-xs">Descubre la amplia variedad de pegamentos y fraguas. Diseñados para brindar una unión resistentes y duradera.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna derecha - Descripción -->
+                    <div class="columna">
+                        <!-- Título de descripción -->
+                        <div class="mb-6">
+                            <h3 class="text-neutral-40 font-bold text-sm mb-2">Descripción</h3>
+                            <div class="h-px w-full bg-neutral-30"></div>
+                        </div>
+                        
+                        <!-- Texto de descripción -->
+                        <p class="text-neutral-40 text-xs mb-6">Es un alambre de acero de bajo carbono, obtenido por trefilación y con posterior tratamiento térmico de recocido, que le otorga excelente ductilidad conservando suficiente resistencia mecánica para trabajar óptimamente en las aplicaciones señaladas.</p>
+                        
+                        <!-- Imágenes que se muestran inicialmente -->
+                        <div class="space-y-4 mb-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-[#EAEAEA] rounded-lg overflow-hidden">
+                                    <img src="./assets/images/pxmas-descrip-img50.png" alt="Imagen descriptiva" class="w-full h-auto">
+                                </div>
+                                <div class="bg-[#EAEAEA] rounded-lg overflow-hidden">
+                                    <img src="./assets/images/pxmas-descrip-img50.png" alt="Imagen descriptiva" class="w-full h-auto">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Imágenes ocultas inicialmente -->
+                        <div id="imagenes-adicionales" class="hidden space-y-4 mb-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-[#EAEAEA] rounded-lg overflow-hidden">
+                                    <img src="./assets/images/pxmas-descrip-img50.png" alt="Imagen descriptiva" class="w-full h-auto">
+                                </div>
+                                <div class="bg-[#EAEAEA] rounded-lg overflow-hidden">
+                                    <img src="./assets/images/pxmas-descrip-img50.png" alt="Imagen descriptiva" class="w-full h-auto">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Documentos del producto -->
+                        <div class="mb-6">
+                            <h3 class="text-neutral-40 font-bold text-sm mb-2">Documentos del producto</h3>
+                            <div class="h-px w-full bg-neutral-30 mb-4"></div>
+                            
+                            <!-- Grid de documentos -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Documento 1 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0">
+                                        <img src="./assets/images/pxmas-descrip-griditem-ipdf.svg" alt="PDF Icon" class="w-6 h-6">
+                                    </div>
+                                    <span class="text-neutral-90 text-xs">Ficha técnica - Fragua Weber</span>
+                                </div>
+                                
+                                <!-- Documento 2 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0">
+                                        <img src="./assets/images/pxmas-descrip-griditem-ipdf.svg" alt="PDF Icon" class="w-6 h-6">
+                                    </div>
+                                    <span class="text-neutral-90 text-xs">Hoja de seguridad - fragua Weber</span>
+                                </div>
+                                
+                                <!-- Documento 3 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0">
+                                        <img src="./assets/images/pxmas-descrip-griditem-ipdf.svg" alt="PDF Icon" class="w-6 h-6">
+                                    </div>
+                                    <span class="text-neutral-90 text-xs">Certificado de calidad - fragua Weber</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón Ver más -->
+                    <div class="grid place-items-center col-span-1 lg:col-span-2 mt-4">
+                        <button id="btn-ver-mas" class="border w-[280px] border-primary-00 text-primary-00 font-bold py-4 px-8 rounded-full text-sm transition hover:bg-primary-00 hover:text-white">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Productos complementarios -->
+    <section class="complementarios-section py-12 bg-neutral-10 mt-12">
+        <div class="container mx-auto px-4">
+            <h6 class="mb-6">Productos complementarios</h6>
+
+            <!-- Swiper -->
+            <div class="swiper" id="complementarios-swiper">
+                
+                <div class="swiper-wrapper md:px-8">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                        
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next complementarios-swiper-button-next rounded-full"></div>
+                <div class="swiper-button-prev complementarios-swiper-button-prev rounded-full"></div>
+            </div>
+
+            <!-- Botón Ver todos -->
+            <div class="flex justify-center mt-8">
+                <button class="border border-primary-00 text-primary-00 font-bold py-4 px-8 rounded-full text-sm transition hover:bg-primary-00 hover:text-white w-[186px]">Ver todos</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Productos similares -->
+    <section class="complementarios-section py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <h6 class="mb-6">Productos similares</h6>
+
+            <!-- Swiper -->
+            <div class="swiper" id="complementarios-swiper">
+                
+                <div class="swiper-wrapper md:px-8">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="swiper-slide">
+                        <div class="card-prod w-full h-[240px] border border-neutral-20 rounded-lg px-2 py-1 flex flex-col">
+                        
+                            <!-- Imagen del producto -->
+                            <div class="flex justify-center mb-3">
+                                <div class="w-[104px] h-[104px] bg-white rounded-lg overflow-hidden">
+                                    <img src="./assets/images/product-image.png" alt="Fragua Color Plus Terracota" class="w-full h-full object-contain">
+                                </div>
+                            </div>
+                            <!-- Información de opciones disponibles -->
+                            <div class="text-primary-00 text-[10px] text-center mb-2">Opciones: 2 medidas</div>
+                            
+                            <!-- Información del producto -->
+                            <div class="card-prod--body w-full space-y-1">
+                                <!-- Marca -->
+                                <div>
+                                    <span class="text-neutral-40 text-xs font-normal">WEBER</span>
+                                </div>
+                                
+                                <!-- Título del producto -->
+                                <a href="categorias-single.html">
+                                    <h3 class="text-neutral-40 text-xs font-bold line-clamp-2">Fragua ImpermeableFragua para Porcelanatos Premium Blanco</h3>
+                                </a>
+                                
+                                <!-- Presentación -->
+                                <div>
+                                    <p class="text-neutral-40 text-[10px] leading-normal">Presentación: Bolsa de 1 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                        
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next complementarios-swiper-button-next rounded-full"></div>
+                <div class="swiper-button-prev complementarios-swiper-button-prev rounded-full"></div>
+            </div>
+
+            <!-- Botón Ver todos -->
+            <div class="flex justify-center mt-8">
+                <button class="border border-primary-00 text-primary-00 font-bold py-4 px-8 rounded-full text-sm transition hover:bg-primary-00 hover:text-white w-[186px]">Ver todos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- pie de página -->
+    <footer class="bg-primary-30 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-4">
+                <!-- Columna 1 - Logo y Redes Sociales -->
+                <div class="footer-column mb-8 md:mb-0">
+                    <div class="mb-3 md:mb-11">
+                        <img src="./assets/images/logo-footer.png" alt="La Viga" class="w-40">
+                    </div>
+                    
+                    <h6 class="mb-3 text-sm md:text-xl/6 font-normal md:font-bold">Síguenos</h6>
+                    
+                    <div class="social-icons flex flex-row space-x-3 md:grid md:grid-cols-5 md:gap-2 md:space-x-0 w-full md:w-[200px] grid-cols-5 gap-2 sm:gap-2 md:gap-2 lg:gap-2 xl:gap-2">
+                        <a href="#" class="social-icon w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-facebook-f text-[16px] md:text-base"></i>
+                        </a>
+                        <a href="#" class="social-icon w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-instagram text-[16px] md:text-base"></i>
+                        </a>
+                        <a href="#" class="social-icon w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-linkedin-in text-[16px] md:text-base"></i>
+                        </a>
+                        <a href="#" class="social-icon w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-x-twitter text-[16px] md:text-base"></i>
+                        </a>
+                        <a href="#" class="social-icon w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-tiktok text-[16px] md:text-base"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Columna 2 - Contáctanos -->
+                <div class="footer-column mb-8 md:mb-0">
+                    <h6 class="mb-6">Contáctanos</h6>
+                    
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <div class="w-6 mr-3 flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-white text-lg"></i>
+                            </div>
+                            <a href="#" class="underline">Chatea con nosotros</a>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 mr-3 flex items-center justify-center">
+                                <img src="./assets/images/icon-phone.svg" alt="icon-phone" class="w-[18px] h-[18px]">
+                            </div>
+                            <a href="tel:+51448-7848">+51 448 7848</a>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 mr-3 flex items-center justify-center">
+                                <i class="far fa-envelope text-white text-lg"></i>
+                            </div>
+                            <a href="mailto:ventas@laviga.com">ventas@laviga.com</a>
+                        </li>
+                    </ul>
+        </div>
+                
+                <!-- Columna 3 - Nosotros -->
+                <div class="footer-column mb-8 md:mb-0">
+                    <h6 class="mb-6">Nosotros</h6>
+                    <ul class="space-y-3 mb-6">
+                        <li><a href="#">¿Quienes somos?</a></li>
+                        <li><a href="#">Socios estratégicos</a></li>
+                    </ul>
+
+                    <h6 class="underline">Oficinas y centros de servicios</h6>
+    </div>
+                
+                <!-- Columna 4 - Atención al cliente -->
+                <div class="footer-column">
+                    <h6 class="text-xl font-bold mb-6">Atención al cliente</h6>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Privacidad y seguridad</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Comprobantes electrónicos</a></li>
+                        
+                    </ul>
+                    
+                    
+                </div>
+                <!-- Columna 5 - Pagos libro -->
+                <div class="footer-column">
+                    <h6 class="mb-6 underline">Portal de pagos</h6>
+                    
+                    
+                    
+                    <div class="mb-4">
+                        <h5 class="text-xl font-bold mb-3"></h5>
+                        <a href="#">
+                            
+                        </a>
+                    </div>
+
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <div class="w-9 mr-3 flex items-center justify-center">
+                                <img src="./assets/images/libro-reclamaciones.png" alt="Libro de reclamaciones" class="w-9">
+                            </div>
+                            <h6><a href="#" class="text-xl font-bold">Libro de reclamaciones</a></h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Separador -->
+            <div class="border-t border-white my-8"></div>
+            
+            <!-- Copyright -->
+            <div>
+                <p class="text-sm text-center">Todos los derechos reservados La Viga S.A 2024</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- buscador -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Search suggestions functionality
+        initSearchSuggestions();
+        
+        function initSearchSuggestions() {
+            // Desktop search
+            const searchInput = document.getElementById('search-input');
+            const suggestionsDropdown = document.getElementById('search-suggestions');
+            
+            // Mobile search
+            const mobileSearchInput = document.getElementById('mobile-search-input');
+            const mobileSuggestionsDropdown = document.getElementById('mobile-search-suggestions');
+            
+            // Initialize desktop search if elements exist
+            if (searchInput && suggestionsDropdown) {
+                // Show suggestions when typing at least 3 characters
+                searchInput.addEventListener('input', function() {
+                    if (this.value.length >= 3) {
+                        suggestionsDropdown.classList.remove('hidden');
+                    } else {
+                        suggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', function(event) {
+                    // Check if click is outside the search bar and suggestions
+                    const isClickInside = searchInput.contains(event.target) || 
+                                        suggestionsDropdown.contains(event.target);
+                                        
+                    if (!isClickInside) {
+                        suggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions on Escape key
+                searchInput.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        suggestionsDropdown.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // Initialize mobile search if elements exist
+            if (mobileSearchInput && mobileSuggestionsDropdown) {
+                // Show suggestions when typing at least 3 characters
+                mobileSearchInput.addEventListener('input', function() {
+                    if (this.value.length >= 3) {
+                        mobileSuggestionsDropdown.classList.remove('hidden');
+                    } else {
+                        mobileSuggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', function(event) {
+                    // Check if click is outside the mobile search bar and suggestions
+                    const isClickInside = mobileSearchInput.contains(event.target) || 
+                                        mobileSuggestionsDropdown.contains(event.target);
+                                        
+                    if (!isClickInside) {
+                        mobileSuggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions on Escape key
+                mobileSearchInput.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        mobileSuggestionsDropdown.classList.add('hidden');
+                    }
+                });
+            }
+        }
+    });
+    </script>
+
+    <!-- mega menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize dropdowns (works for categories, brands and services)
+            function initDropdown(containerSelector) {
+                const mainItems = document.querySelectorAll(containerSelector + ' .navdesplegable-item');
+                const subItems = document.querySelectorAll(containerSelector + ' .navdesplegable-subitem');
+                
+                // Handle main item clicks
+                mainItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all main items in this dropdown
+                        mainItems.forEach(cat => cat.classList.remove('font-bold', 'active'));
+                        
+                        // Add active class to clicked item
+                        this.classList.add('font-bold', 'active');
+                        
+                        // Get the data attribute (either data-navdesplegable or data-categoria)
+                        const categoria = this.getAttribute('data-navdesplegable') || this.getAttribute('data-categoria');
+                        console.log(`Selected category: ${categoria}`);
+                        
+                        // Select the first subitem by default
+                        const firstSubItem = document.querySelector(containerSelector + ' .navdesplegable-subitem');
+                        if (firstSubItem) {
+                            subItems.forEach(subcat => subcat.classList.remove('font-bold', 'active'));
+                            firstSubItem.classList.add('font-bold', 'active');
+                        }
+                    });
+                });
+                
+                // Handle sub item clicks
+                subItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Only prevent default if the link doesn't have an href or it's "#"
+                        const href = this.getAttribute('href');
+                        if (!href || href === '#') {
+                            e.preventDefault();
+                        }
+                        
+                        // Remove active class from all sub items in this dropdown
+                        subItems.forEach(subcat => subcat.classList.remove('font-bold', 'active'));
+                        
+                        // Add active class to clicked item
+                        this.classList.add('font-bold', 'active');
+                        
+                        // Get the data attribute (either data-subnavdesplegable or data-subcategoria)
+                        const subcategoria = this.getAttribute('data-subnavdesplegable') || this.getAttribute('data-subcategoria');
+                        console.log(`Selected subcategory: ${subcategoria}`);
+                    });
+                });
+            }
+            
+            // Initialize all dropdowns
+            initDropdown('.navigation li:nth-child(2)'); // Categories dropdown
+            initDropdown('.navigation li:nth-child(3)'); // Brands dropdown
+            initDropdown('.navigation li:nth-child(4)'); // Services dropdown
+            
+        });
+    </script>
+
+    <!-- producto individual: galeria, colores, cantidad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Inicializar swipers solo si existen los elementos
+            if (document.querySelector('.thumbs-swiper')) {
+                // Producto individual - Miniaturas (debe inicializarse primero)
+                const thumbsSwiper = new Swiper('.thumbs-swiper', {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                    watchSlidesProgress: true,
+                    slideToClickedSlide: true,
+                    direction: 'vertical',
+                });
+                
+                // Producto individual - Galería principal
+                const mainSwiper = new Swiper('.main-image-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loop: true,
+                    pagination: {
+                        el: '.main-image-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.main-image-swiper-button-next',
+                        prevEl: '.main-image-swiper-button-prev',
+                    },
+                    thumbs: {
+                        swiper: thumbsSwiper
+                    }
+                });
+                
+                // Sincronizar miniaturas con imagen principal
+                thumbsSwiper.on('click', function() {
+                    const clickedIndex = thumbsSwiper.clickedIndex;
+                    if (mainSwiper) {
+                        mainSwiper.slideTo(clickedIndex);
+                    }
+                    
+                    // Actualizar borde de miniaturas
+                    document.querySelectorAll('.thumbnail').forEach(thumb => {
+                        thumb.classList.remove('border-primary-00');
+                        thumb.classList.add('border-neutral-20');
+                    });
+                    
+                    thumbsSwiper.slides[clickedIndex].querySelector('.thumbnail').classList.remove('border-neutral-20');
+                    thumbsSwiper.slides[clickedIndex].querySelector('.thumbnail').classList.add('border-primary-00');
+                });
+                
+                // Carousel de colores
+                if (document.querySelector('.colors-swiper')) {
+                    const colorsSwiper = new Swiper('.colors-swiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        navigation: {
+                            nextEl: '.colors-swiper-button-next',
+                            prevEl: '.colors-swiper-button-prev',
+                        }
+                    });
+                }
+            }
+            
+            // Controles de cantidad
+            const quantityControls = document.querySelectorAll('.quantity-control');
+            quantityControls.forEach(control => {
+                const decreaseBtn = control.querySelector('.decrease');
+                const increaseBtn = control.querySelector('.increase');
+                const quantityEl = control.querySelector('.quantity');
+                
+                decreaseBtn.addEventListener('click', () => {
+                    let quantity = parseInt(quantityEl.textContent);
+                    if (quantity > 1) {
+                        quantityEl.textContent = quantity - 1;
+                    }
+                });
+                
+                increaseBtn.addEventListener('click', () => {
+                    let quantity = parseInt(quantityEl.textContent);
+                    quantityEl.textContent = quantity + 1;
+                });
+            });
+        });
+    </script>
+
+    <!-- producto ABAJO botón Ver más -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnVerMas = document.getElementById('btn-ver-mas');
+            const imagenesAdicionales = document.getElementById('imagenes-adicionales');
+            
+            if (btnVerMas && imagenesAdicionales) {
+                btnVerMas.addEventListener('click', function() {
+                    // Toggle para mostrar/ocultar las imágenes
+                    if (imagenesAdicionales.classList.contains('hidden')) {
+                        imagenesAdicionales.classList.remove('hidden');
+                        btnVerMas.textContent = 'Ver menos';
+                    } else {
+                        imagenesAdicionales.classList.add('hidden');
+                        btnVerMas.textContent = 'Ver más';
+                    }
+                });
+            }
+        });
+    </script>
+
+ <!-- productos complementarios y similares -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const complementariosSwiper = new Swiper('#complementarios-swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                centeredSlides: false,
+                grabCursor: true,
+                observer: true,
+                observeParents: true,
+                watchOverflow: true,
+                pagination: {
+                    el: '.complementarios-swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.complementarios-swiper-button-next',
+                    prevEl: '.complementarios-swiper-button-prev',
+                },
+                breakpoints: {
+                    // when window width is < 640px
+                    0: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 12,
+                    },
+                    // when window width is >= 768px
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 12,
+                    },
+                    // when window width is >= 1024px
+                    1024: {
+                        slidesPerView: 5,
+                        spaceBetween: 12,
+                    },
+                    // when window width is >= 1280px
+                    1280: {
+                        slidesPerView: 5.3,
+                        spaceBetween: 30,
+                    },
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
