@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Viga | Materiales de Construcción</title>
+    <link rel="stylesheet" href="./assets/output.css">
+    <link rel="icon" href="./assets/images/logo-vector1.svg" type="image/svg+xml">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <!-- 1. HEADER SOLO INICIO -->
+    <!-- navegation -->
+    <style>
+        .menu-nav .navigation li a {
+            position: relative;
+        }
+        .menu-nav .navigation li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -8px;
+            left: 0;
+            background-color: #00B2FF;
+            transition: width 0.3s ease;
+        }
+        .menu-nav .navigation li a:hover::after,
+        .menu-nav .navigation li a.active::after {
+            width: 100%;
+        }
+        .menu-nav .navigation li:first-child a.active::after {
+            width: 100%;
+        }
+        .menu-nav .navigation li:first-child a {
+            position: relative;
+        }
+    </style>
+
+    <!-- buscador -->
+    <style>
+        /* Estilos para las sugerencias de búsqueda */
+        #search-suggestions,
+        #mobile-search-suggestions {
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-height: 450px;
+            overflow-y: auto;
+        }
+        
+        /* Estilo para los enlaces de sugerencias */
+        #search-suggestions a,
+        #mobile-search-suggestions a {
+            display: block;
+            transition: color 0.2s ease;
+        }
+        
+        /* Limitar ancho máximo del dropdown en pantallas grandes */
+        @media (min-width: 768px) {
+            #search-suggestions {
+                max-width: 638px;
+            }
+        }
+        
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 767px) {
+            #mobile-search-suggestions {
+                max-height: 80vh;
+            }
+        }
+        
+        /* Estilo para el scrollbar */
+        #search-suggestions::-webkit-scrollbar,
+        #mobile-search-suggestions::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        #search-suggestions::-webkit-scrollbar-track,
+        #mobile-search-suggestions::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        #search-suggestions::-webkit-scrollbar-thumb,
+        #mobile-search-suggestions::-webkit-scrollbar-thumb {
+            background: #c2c2c2;
+            border-radius: 10px;
+        }
+        
+        #search-suggestions::-webkit-scrollbar-thumb:hover,
+        #mobile-search-suggestions::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+    </style>
+
+    <!-- mega menu -->
+    <style>
+        /* mega menu */
+        .navdesplegable-item,
+        .navdesplegable-subitem,
+        .navdesplegable-tipocontainer a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .navdesplegable-item {
+            color: #686868;
+        }
+        .navdesplegable-item:hover, 
+        .navdesplegable-item.active {
+            color: #00B2FF !important;
+        }
+        .navdesplegable-subitem {
+            color: #00B2FF;
+        }
+        .navdesplegable-subitem:hover, 
+        .navdesplegable-subitem.active {
+            color: #00B2FF !important;
+        }
+        .navdesplegable-tipocontainer a {
+            color: #81848B;
+        }
+        .navdesplegable-tipocontainer a:hover {
+            color: #00B2FF !important;
+        }
+        .navigation li.group .absolute > div {
+            max-height: 698px;
+        }
+        .navigation li.group .absolute > div > div {
+            height: 100%;
+            max-height: 650px;
+        }
+        .navdesplegable-main {
+            max-height: 650px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc transparent;
+            padding-right: 10px;
+        }
+        .navdesplegable-main::-webkit-scrollbar {
+            width: 4px;
+        }
+        .navdesplegable-main::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .navdesplegable-main::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 4px;
+        }
+        .navdesplegable-sub,
+        .navdesplegable-type {
+            height: auto;
+            max-height: 650px;
+        }
+        .navdesplegable-banners {
+            height: 650px;
+            display: flex;
+            flex-direction: column;
+        }
+        .navdesplegable-banners .grid {
+            height: 100%;
+            grid-template-rows: 1fr 1fr;
+        }
+        .banner-item {
+            height: 100%;
+        }
+        .banner-item a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+        .banner-item a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .banner-item:hover a img {
+            transform: scale(1.03);
+        }
+        .navdesplegable-main a::after,
+        .navdesplegable-sub a::after,
+        .navdesplegable-type a::after {
+            display: none !important;
+        }
+        .navdesplegable-main a:hover::after,
+        .navdesplegable-sub a:hover::after,
+        .navdesplegable-type a:hover::after {
+            width: 0 !important;
+        }
+        @media (max-width: 1440px) {
+            .group:hover .absolute.left-0 .bg-neutral-00 {
+                position: absolute;
+                width: 100vw;
+                max-width: 100vw;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .menu-nav .navigation li.group {
+            position: static;
+        }
+        .menu-nav .navigation li.group .absolute {
+            left: 0;
+            right: 0;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        @media (max-width: 1023px) {
+            .menu-nav .navigation li.group .absolute .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .navdesplegable-sub,
+            .navdesplegable-type {
+                border-left: none;
+                border-top: 1px solid #EAEAEA;
+                padding-left: 0;
+                padding-top: 1rem;
+                margin-top: 1rem;
+            }
+            .navdesplegable-banners {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- checkbox filtros -->
+    <style>
+        /* Estilos para los checkboxes personalizados */
+        .checkbox-custom {
+            transition: all 0.2s ease;
+        }
+        .filter-checkbox:checked + .checkbox-custom {
+            background-color: #00B2FF;
+            border-color: #00B2FF;
+        }
+        .filter-checkbox:checked + .checkbox-custom::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+   
+</head>
+<body>
+    <!-- Header -->  
+    <section class="header-hero relative w-full h-auto">
+
+        <!-- Header -->
+        <header class="relative z-10 w-full">
+            <!-- Desktop Header) -->
+            <div class="hidden lg:block">
+                <!-- Top Header Section -->
+                <div class="top-header py-4">
+                    <div class="container mx-auto px-4 flex justify-between items-center">
+                        <!-- Logo -->
+                        <div class="logo-box">
+                            <a href="/" class="logo w-40 block">
+                                <img src="./assets/images/logo-la-viga-color.svg" alt="La Viga Logo" class="w-full">
+                            </a>
+                        </div>
+
+                        <!-- Right Side Items -->
+                        <div class="flex items-center gap-4">
+                            <!-- Search Bar -->
+                            <div class="search-bar flex items-center bg-[rgba(234,234,234,0.3)] rounded-full px-5 py-[5px] w-[638px] mr-10 relative">
+                                <img src="./assets/images/search-icon-gray.svg" alt="Search" class="w-5 h-5 mr-3">
+                                <input type="text" id="search-input" placeholder="Buscar en la Viga" class="bg-transparent w-full placeholder-neutral-40 border-none focus:outline-none text-neutral-40 font-bold text-sm">
+                                
+                                <!-- Search Suggestions Dropdown -->
+                                <div id="search-suggestions" class="absolute left-0 right-0 top-full mt-2 bg-white rounded-lg shadow-lg z-50 hidden">
+                                    <div class="p-5">
+                                        <!-- Columna 1: Marcas -->
+                                        <div class="flex">
+                                            <div class="w-1/3 pr-4">
+                                                <p class="text-neutral-40 font-bold text-sm mb-3">Marcas</p>
+                                                <ul class="space-y-3">
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">SIKA</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">APU</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">SOL</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">LARK</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Divisor vertical -->
+                                            <div class="w-px bg-neutral-30 mx-4"></div>
+                                            
+                                            <!-- Columna 2: Productos -->
+                                            <div class="w-1/3 px-4">
+                                                <p class="text-neutral-40 font-bold text-sm mb-3">Productos</p>
+                                                <ul class="space-y-3">
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo epóxico 5kg</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo epóxico para anclajes Anchorfix</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo para pegado de Metales Sikaflex 117 Metal Force</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Adhesivo y sellador de juntas Sikaflex 11FC Plus Blanco</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Divisor vertical -->
+                                            <div class="w-px bg-neutral-30 mx-4"></div>
+                                            
+                                            <!-- Columna 3: Categorías -->
+                                            <div class="w-1/3 pl-4">
+                                                <p class="text-neutral-40 font-bold text-sm mb-3">Categorías</p>
+                                                <ul class="space-y-3">
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Porcelanato</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Ceramica y Mayolicas</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Clavos</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Herramientas de obra pesada</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Herramientas electricas</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Inalámbricas</a></li>
+                                                    <li><a href="#" class="text-neutral-40 text-xs hover:text-primary-00">Lavaderos de cocina</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Quote Button -->
+                            <button class="quote-button flex items-center gap-2 bg-primary-00 text-neutral-00 font-bold text-sm py-[14px] px-5 rounded-full transition-all duration-200">
+                                <img src="./assets/images/file-icon.svg" alt="File" class="w-5 h-5">
+                                <span class="paragraph2 text-neutral-00 font-bold">Cotizar</span>
+                            </button>
+
+                            <!-- Cart Button -->
+                            <button class="cart p-2.5 hover:bg-neutral-40 hover:bg-opacity-20 rounded-full transition-all duration-200">
+                                <img src="./assets/images/cart-icon-gray.svg" alt="Cart" class="w-6 h-6">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- navegation desktop -->
+                <nav class="menu-nav w-full py-5 bg-neutral-10">
+                    <div class="container mx-auto px-4 flex justify-end">
+                        <ul class="navigation flex items-center gap-12">
+                            <li><a href="/" class="text-neutral-40 font-bold text-sm">Inicio</a></li>
+                            <li class="flex items-center gap-1.5 relative group">
+                                <a href="/categorias.html" class="text-neutral-40 font-bold text-sm active">Categorías</a>
+                                <img src="./assets/images/chevron-down-gray.svg" alt="Expand" class="w-4 h-4">
+                                
+                                <!-- Dropdown menu -->
+                                <div class="absolute left-0 right-0 top-[83%] hidden group-hover:block z-50">
+                                    <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
+                                        <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
+                                            <!-- Primera columna - Categorías principales -->
+                                            <div class="navdesplegable-main">
+                                                <ul class="space-y-2">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="materiales">Materiales de construcción</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="ferreteria">Artículos de ferretería</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="herramientas">Herramientas eléctricas e inalámbricas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="electricos">Materiales eléctricos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="acabados">Materiales para acabados</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="saneamiento">Materiales para obra de saneamiento</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sanitarios">Materiales sanitarios</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Segunda columna - Subcategorías -->
+                                            <div class="navdesplegable-sub border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-container">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="fraguas">Fraguas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="pegamentos">Pegamentos para pisos y revestimientos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="selladores">Selladores y espumas expansivas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="yeso">Yeso</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Tercera columna - Tipos -->
+                                            <div class="navdesplegable-type border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-tipocontainer">
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Extra fuerte.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">General.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Interior.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Piscina.</a></li>
+                                                    <li><a href="/categorias.html" class="block py-1 text-[14px] text-neutral-40">Porcelanato.</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Cuarta columna - Banners -->
+                                            <div class="navdesplegable-banners">
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div class="banner-item">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/cat-dropdown-img-car50-2.png" alt="Artículos de ferretería" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item ">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/cat-dropdown-img-car50-1.png" alt="Materiales para acabados" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item col-span-2">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/cat-dropdown-img-car100.png" alt="Materiales de construcción" >
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-1.5 relative group">
+                                <a href="/marcas.html" class="text-neutral-40 font-bold text-sm">Marcas</a>
+                                <img src="./assets/images/chevron-down-gray.svg" alt="Expand" class="w-4 h-4">
+                                
+                                <!-- Dropdown menu for Marcas -->
+                                <div class="absolute left-0 right-0 top-[83%] hidden group-hover:block z-50">
+                                    <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
+                                        <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
+                                            <!-- Primera columna - Marcas principales -->
+                                            <div class="navdesplegable-main">
+                                                <ul class="space-y-2">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="moldimix">Moldimix</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sika">Sika</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="soldiflex">Soldiflex</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="soldimix">Soldimix</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="tekbond">Tek Bond</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="weber">Weber / Webeber/ Celima</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zaditivos">Z Aditivos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zunicontriz">Z Unicontriz</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="milagro">El Milagroa</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="3m">3M</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="asa">ASA</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="nortron">Nortron</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="sandflex">Sand Flex</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="dewalt">Dewalt</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="blackdecker">Black & Decker</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zaditivos">Z Aditivos</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="zunicontriz">Z Unicontriz</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="nortron">Nortron</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="milagro">El Milagroa</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Segunda columna - Submarcas -->
+                                            <div class="navdesplegable-sub border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-container">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="selladores">Selladores y espumas expansivas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="fraguas">Fraguas</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="pegamentos">Pegamentos pisos y revestimentos</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Tercera columna - Tipos -->
+                                            <div class="navdesplegable-type border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-tipocontainer">
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Espuma expansiva.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de poliuretano.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de silicona.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">Sellador de superficie.</a></li>
+                                                    <li><a href="/marcas-sika.html" class="block py-1 text-[14px] text-neutral-40">General.</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Cuarta columna - Banner único -->
+                                            <div class="navdesplegable-banners">
+                                                <div class="h-full">
+                                                    <div class="banner-item h-full">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/mar-dropdown-banner.png" alt="Sika" class="w-full h-full object-cover rounded">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-1.5 relative group">
+                                <a href="#" class="text-neutral-40 font-bold text-sm">Servicios</a>
+                                <img src="./assets/images/chevron-down-gray.svg" alt="Expand" class="w-4 h-4">
+                            
+                                
+                                <!-- Dropdown menu for Servicios -->
+                                <div class="absolute left-0 right-0 top-[83%] hidden group-hover:block z-50">
+                                    <div class="mx-auto max-w-[1440px] bg-neutral-00 shadow-xl rounded py-6 px-8">
+                                        <div class="grid grid-cols-[1fr_1fr_1fr_550px] gap-6">
+                                            <!-- Primera columna - Categorías principales -->
+                                            <div class="navdesplegable-main">
+                                                <ul class="space-y-2">
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 font-bold navdesplegable-item active" data-categoria="incendio">Sistema contra incendio</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="presion">Sistema de presión constante</a></li>
+                                                    <li><a href="#" class="block py-1 text-[14px] text-neutral-40 navdesplegable-item" data-categoria="ventilacion">Sistema de ventilación mecánico</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Segunda columna - Subcategorías -->
+                                            <div class="navdesplegable-sub border-l border-neutral-20 pl-6">
+                                                <ul class="space-y-2 navdesplegable-container">
+                                                    <li><a href="/sistema-contra-incendio.html" class="block py-1 text-[14px] text-primary-00 font-bold navdesplegable-subitem active" data-subcategoria="agua">Agua contra incendio</a></li>
+                                                    <li><a href="/sistema-contra-incendio.html" class="block py-1 text-[14px] text-primary-00 navdesplegable-subitem" data-subcategoria="deteccion">Detección y alarma contra incendio</a></li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <!-- Tercera columna - Tipos -->
+                                            <div class="navdesplegable-type border-l border-neutral-20 pl-6">
+                                                
+                                            </div>
+                                            
+                                            <!-- Cuarta columna - Banners -->
+                                            <div class="navdesplegable-banners">
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div class="banner-item">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/navser-01.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item ">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/navser-02.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                    <div class="banner-item col-span-2">
+                                                        <a href="#" class="relative">
+                                                            <img src="./assets/images/dropdown/navser-03.png" alt="" >
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li><a href="#" class="text-neutral-40 font-bold text-sm">Sectores de negocio</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Mobile Header  -->
+            <div class="lg:hidden">
+                <!-- First fila: logo + otros -->
+                <div class="flex items-center justify-between py-4 px-4">
+                    <!-- Logo -->
+                    <div class="logo-box">
+                        <a href="/" class="logo block">
+                            <img src="./assets/images/logo-la-viga-color.svg" alt="La Viga Logo" class="w-24">
+                        </a>
+                    </div>
+
+                    <!-- Right Side Items -->
+                    <div class="flex items-center gap-3">
+                        <!-- Quote Button (icon only) -->
+                        <button class="w-8 h-8 flex items-center justify-center bg-primary-00 rounded-full">
+                            <img src="./assets/images/cotizar-mobile-icon.svg" alt="Cotizar" class="w-4 h-4">
+                        </button>
+
+                        <!-- Cart Button -->
+                        <button class="p-2">
+                            <img src="./assets/images/cart-icon-gray.svg" alt="Cart" class="w-5 h-5">
+                        </button>
+
+                        <!-- Hamburger Menu -->
+                        <button class="p-2">
+                            <img src="./assets/images/menu-mobile-icon-gray.svg" alt="Menu" class="w-5 h-5">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Second fila: barra de búsqueda -->
+                <div class="px-4 pb-4">
+                    <div class="search-bar flex items-center bg-[rgba(234,234,234,0.2)] rounded-full px-3 py-2 w-full">
+                        <img src="./assets/images/search-icon-gray.svg" alt="Search" class="w-4 h-4 mr-2">
+                        <input type="text" placeholder="Buscar en La Viga" class="bg-transparent w-full placeholder-neutral-40 border-none focus:outline-none text-neutral-40 font-semibold text-sm">
+                    </div>
+                </div>
+            </div>
+        </header>
+       
+    </section>
+
+    
+
+    <!-- contenido principal -->
+    <section class="bg-neutral-10">
+        <div class="container mx-auto px-4 py-6">
+
+            <h3 class="font-bold text-neutral-50 ">Libro de reclamaciones</h3> 
+            <!-- formulario -->
+            <form id="cotizacionForm" class="space-y-4">
+                <div class="container py-6 flex flex-col lg:flex-row gap-10">
+                    <!-- columna 1 -->
+                    <div class="w-full lg:w-1/2">
+                        <!-- caja blanca -->
+                        <div class="bg-neutral-00 rounded-lg pt-4 px-6 pb-8 space-y-10">
+                            <div class="font-bold text-neutral-50">Datos del cliente</div>
+
+                            <!-- tipo documento y numero de documento -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Columna 1: actividad -->
+                                <div>
+                                    <label for="tipo-documento" class="block text-neutral-50 text-sm mb-2">Tipo de documento</label>
+                                    <select id="tipo-documento" name="tipo-documento" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                        <option value="" disabled selected>Selecciona documento</option>
+                                        <option value="dni">DNI</option>
+                                        <option value="carnet-extranjeria">Carnet de extranjeria</option>
+                                        <option value="passaporte">Passaporte</option>
+                                        <option value="ruc">RUC</option>
+                                    </select>
+                                    <p id="tipoDocumentoError" class="text-red-500 text-xs mt-1 hidden">Selecciona un documento</p>
+                                </div>
+                                
+                                <!-- Columna 2: numero -->
+                                <div>
+                                    <label for="numero-documento" class="block text-neutral-50 text-sm mb-2">Numero de documento</label>
+                                    <input type="text" id="numero-documento" name="numero-documento" placeholder="Ingresa numero de documento" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" required>
+                                    <p id="numeroDocumentoError" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                                </div>
+                            </div>  
+                            
+                            <!-- nombre telefono -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Columna 1: RUC -->
+                                <div>
+                                    <label for="nombre-cliente" class="block text-neutral-50 text-sm mb-2">Nombre del cliente</label>
+                                    <input type="text" id="nombre-cliente" name="nombre-cliente" placeholder="Ingresa nombre del cliente" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" maxlength="11" required>
+                                    <p id="nombreClienteError" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                                    </div>
+                
+                                <!-- Celular -->
+                                <div>
+                                    <label for="celular" class="block text-neutral-50 text-sm mb-2">Celular</label>
+                                    <input type="tel" id="celular" name="celular" placeholder="Ingresa tu número" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" maxlength="9" required>
+                                    <p id="celularError" class="text-red-500 text-xs mt-1 hidden">Ingresa un número de celular válido (9 dígitos)</p>
+                                </div>
+                            </div>
+
+                            <!-- Correo electrónico -->
+                            <div>
+                                <label for="email" class="block text-neutral-50 text-sm mb-2">Correo electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" required>
+                                <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Ingresa un correo electrónico válido</p>
+                            </div>
+
+                            <!-- Departamento, Provincia y Distrito -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <!-- Departamento -->
+                                <div>
+                                    <label for="departamento" class="block text-neutral-50 text-sm mb-2">Departamento</label>
+                                    <select id="departamento" name="departamento" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                        <option value="" disabled selected>Selecciona</option>
+                                        <option value="arequipa">Arequipa</option>
+                                        <option value="cusco">Cusco</option>
+                                        <option value="la-libertad">La Libertad</option>
+                                        <option value="lima">Lima</option>
+                                        <option value="piura">Piura</option>
+                                    </select>
+                                    <p id="departamentoError" class="text-red-500 text-xs mt-1 hidden">Selecciona un departamento</p>
+                                </div>
+                                
+                                <!-- Provincia -->
+                                <div>
+                                    <label for="provincia" class="block text-neutral-50 text-sm mb-2">Provincia</label>
+                                    <select id="provincia" name="provincia" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                        <option value="" disabled selected>Selecciona</option>
+                                        <option value="cañete">Cañete</option>
+                                        <option value="callao">Callao</option>
+                                        <option value="huaura">Huaura</option>
+                                        <option value="huaral">Huaral</option>
+                                        <option value="lima">Lima</option>
+                                    </select>
+                                    <p id="provinciaError" class="text-red-500 text-xs mt-1 hidden">Selecciona una provincia</p>
+                                </div>
+                                
+                                <!-- Distrito -->
+                                <div>
+                                    <label for="distrito-entrega" class="block text-neutral-50 text-sm mb-2">Distrito</label>
+                                    <select id="distrito-entrega" name="distrito-entrega" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                        <option value="" disabled selected>Selecciona</option>
+                                        <option value="barranco">Barranco</option>
+                                        <option value="miraflores">Miraflores</option>
+                                        <option value="san-borja">San Borja</option>
+                                        <option value="san-isidro">San Isidro</option>
+                                        <option value="surco">Santiago de Surco</option>
+                                    </select>
+                                    <p id="distritoEntregaError" class="text-red-500 text-xs mt-1 hidden">Selecciona un distrito</p>
+                                </div>
+                            </div>
+
+                            <!-- Dirección de entrega -->
+                            <div>
+                                <label for="direccion" class="block text-neutral-50 text-sm mb-2">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" placeholder="Ingresa la dirección" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" required>
+                                <p id="direccionError" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                            </div>
+
+                            
+
+                            <!-- Divisor -->
+                            <div class="border-t border-dashed border-neutral-30"></div>
+                            
+
+                        </div>
+                    </div>
+                    <!-- columna 2 -->
+                    <div class="w-full lg:w-1/2 space-y-6">
+                        
+
+
+                        <!-- caja blanca -->    
+                        <div class="bg-neutral-00 rounded-lg pt-4 px-6 pb-8 space-y-7">
+                            <!-- adjuntar documento -->
+                            <label class="block font-bold text-neutral-50 mb-3">Motivo de la reclamación</label>
+
+                            <!-- tipo documento y numero de documento -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Columna 1: actividad -->
+                                <div>
+                                    <label for="motivo" class="block text-neutral-50 text-sm mb-2">Motivo</label>
+                                    <select id="motivo" name="motivo" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                        <option value="" disabled selected>Selecciona un motivo</option>
+                                        <option value="queja">Queja</option>
+                                        <option value="reclamo">Reclamo</option>
+                                    </select>
+                                    <p id="motivoError" class="text-red-500 text-xs mt-1 hidden">Selecciona un movito</p>
+                                </div>
+                                
+                                <!-- Columna 2: datepicker fecha de queja o reclamo -->
+                                <div>
+                                    <label for="fecha-queja" class="block text-neutral-50 text-sm mb-2">Fecha de queja o reclamo</label>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <!-- Día -->
+                                        <div>
+                                            <select id="dia-queja" name="dia-queja" class="w-full border border-neutral-30 rounded-lg px-3 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_0.5rem]" required>
+                                                <option value="" disabled selected>Día</option>
+                                            </select>
+                                        </div>
+                                        <!-- Mes -->
+                                        <div>
+                                            <select id="mes-queja" name="mes-queja" class="w-full border border-neutral-30 rounded-lg px-3 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_0.5rem]" required>
+                                                <option value="" disabled selected>Mes</option>
+                                                <option value="01">Enero</option>
+                                                <option value="02">Febrero</option>
+                                                <option value="03">Marzo</option>
+                                                <option value="04">Abril</option>
+                                                <option value="05">Mayo</option>
+                                                <option value="06">Junio</option>
+                                                <option value="07">Julio</option>
+                                                <option value="08">Agosto</option>
+                                                <option value="09">Septiembre</option>
+                                                <option value="10">Octubre</option>
+                                                <option value="11">Noviembre</option>
+                                                <option value="12">Diciembre</option>
+                                            </select>
+                                        </div>
+                                        <!-- Año -->
+                                        <div>
+                                            <select id="ano-queja" name="ano-queja" class="w-full border border-neutral-30 rounded-lg px-3 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_0.5rem]" required>
+                                                <option value="" disabled selected>Año</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p id="fechaQuejaError" class="text-red-500 text-xs mt-1 hidden">Selecciona una fecha válida</p>
+                                </div>
+                            </div>  
+
+                            <!-- respuesta compra -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Columna 1: forma -->
+                                <div>
+                                    <label for="forma-respuesta" class="block text-neutral-50 text-sm mb-2">Forma de respuesta</label>
+                                    <select id="forma-respuesta" name="forma-respuesta" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                        <option value="" disabled selected>Selecciona una forma</option>
+                                        <option value="email">Correo electrónico</option>
+                                        <option value="carta">Carta</option>
+                                        <option value="presencial">Presencial</option>
+                                    </select>
+                                    <p id="formaRespuestaError" class="text-red-500 text-xs mt-1 hidden">Selecciona una forma de respuesta</p>
+                                </div>
+                                
+                                <!-- Columna 2: tienda -->
+                                <div>
+                                    <label for="tienda-compra" class="block text-neutral-50 text-sm mb-2">Tienda donde realizó la compra</label>
+                                    <select id="tienda-compra" name="tienda-compra" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                        <option value="" disabled selected>Selecciona una opción</option>
+                                        <option value="fisica">Tienda física</option>
+                                        <option value="online">Tienda online</option>
+                                        <option value="terceros">Terceros</option>
+                                    </select>
+                                    <p id="tiendaCompraError" class="text-red-500 text-xs mt-1 hidden">Selecciona un tipo de tienda</p>
+                                </div>
+                            </div>  
+                            
+                            <!-- número de orden fecha incidente -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Columna 1: número de orden -->
+                                <div>
+                                    <label for="numero-orden" class="block text-neutral-50 text-sm mb-2">Número de orden</label>
+                                    <input type="number" id="numero-orden" name="numero-orden" placeholder="Ingresa el número de orden" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" min="1" required>
+                                    <p id="numeroOrdenError" class="text-red-500 text-xs mt-1 hidden">Ingresa un número de orden válido</p>
+                                </div>
+                                
+                                <!-- Columna 2: datepicker -->
+                                <div>
+                                    <label for="fecha-incidente" class="block text-neutral-50 text-sm mb-2">Fecha del incidente</label>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <!-- Día -->
+                                        <div>
+                                            <select id="dia-incidente" name="dia-incidente" class="w-full border border-neutral-30 rounded-lg px-3 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_0.5rem]" required>
+                                                <option value="" disabled selected>Día</option>
+                                            </select>
+                                        </div>
+                                        <!-- Mes -->
+                                        <div>
+                                            <select id="mes-incidente" name="mes-incidente" class="w-full border border-neutral-30 rounded-lg px-3 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_0.5rem]" required>
+                                                <option value="" disabled selected>Mes</option>
+                                                <option value="01">Enero</option>
+                                                <option value="02">Febrero</option>
+                                                <option value="03">Marzo</option>
+                                                <option value="04">Abril</option>
+                                                <option value="05">Mayo</option>
+                                                <option value="06">Junio</option>
+                                                <option value="07">Julio</option>
+                                                <option value="08">Agosto</option>
+                                                <option value="09">Septiembre</option>
+                                                <option value="10">Octubre</option>
+                                                <option value="11">Noviembre</option>
+                                                <option value="12">Diciembre</option>
+                                            </select>
+                                        </div>
+                                        <!-- Año -->
+                                        <div>
+                                            <select id="ano-incidente" name="ano-incidente" class="w-full border border-neutral-30 rounded-lg px-3 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_0.5rem]" required>
+                                                <option value="" disabled selected>Año</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p id="fechaError" class="text-red-500 text-xs mt-1 hidden">Selecciona una fecha válida</p>
+                                </div>
+                            </div>
+                            
+                            <!-- número de orden fecha incidente -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Columna 1: nombre del producto/servicio -->
+                                <div>
+                                    <label for="nombre-producto" class="block text-neutral-50 text-sm mb-2">Nombre del producto/servicio</label>
+                                    <input type="text" id="nombre-producto" name="nombre-producto" placeholder="Ingresa el nombre del producto o servicio" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" required>
+                                    <p id="nombreProductoError" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                                </div>
+                                
+                                <!-- Columna 2: cantidad -->
+                                <div>
+                                    <label for="cantidad" class="block text-neutral-50 text-sm mb-2">Cantidad</label>
+                                    <input type="number" id="cantidad" name="cantidad" placeholder="Ingresa la cantidad" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" min="1" required>
+                                    <p id="cantidadError" class="text-red-500 text-xs mt-1 hidden">Ingresa una cantidad válida</p>
+                                </div>
+                            </div> 
+                            
+                            <!-- Detalle de la Queja / Reclamo, Pedido del Cliente -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Columna 1: Detalle de la Queja / Reclamo -->
+                                <div>
+                                    <label for="detalle-queja" class="block text-neutral-50 text-sm mb-2">Detalle de la Queja / Reclamo</label>
+                                    <textarea id="detalle-queja" name="detalle-queja" placeholder="Describe detalladamente tu queja o reclamo" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition resize-vertical" rows="4" required></textarea>
+                                    <p id="detalleQuejaError" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                                </div>
+                                
+                                                            <!-- Columna 2: Pedido del Cliente -->
+                                <div>
+                                    <label for="pedido-cliente" class="block text-neutral-50 text-sm mb-2">Pedido del Cliente</label>
+                                    <textarea id="pedido-cliente" name="pedido-cliente" placeholder="Describe tu pedido o solicitud específica" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition resize-vertical" rows="4" required></textarea>
+                                    <p id="pedidoClienteError" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                                </div>
+                            </div> 
+
+
+                            <!-- Checkboxes -->
+                            <div class="space-y-4 mb-6">
+                                <p>
+                                    El proveedor deberá dar respuesta al reclamo en un plazo no mayor de quince (15) días hábiles improrrogables. 
+                                </p>
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input id="chk-terminos" name="chk-terminos" type="checkbox" class="min-w-4 min-h-4 border border-neutral-30 rounded focus:ring-primary-00 text-primary-00">
+                                    <span class="text-neutral-50 text-sm">Doy conformidad que los datos suministrados son reales y pueden ser verificados de ser necesario</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input id="chk-privacidad" name="chk-privacidad" type="checkbox" class="min-w-4 min-h-4 border border-neutral-30 rounded focus:ring-primary-00 text-primary-00">
+                                    <span class="text-neutral-50 text-sm">Acepto recibir correos a esta dirección así como las Políticas de Privacidad</span>
+                                </label>
+                            </div>
+
+                            <!-- Botón de solicitar cotización -->
+                            <button id="btn-solicitar" type="submit" class="block w-3/4 mx-auto py-3 rounded-full font-bold text-white bg-primary-00 disabled:bg-neutral-30 disabled:cursor-not-allowed transition" disabled>Enviar</button>
+                        </div>
+
+                        <!-- Script para validación completa del formulario -->
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Elementos del formulario
+                                const form = document.getElementById('cotizacionForm');
+                                const btnSolicitar = document.getElementById('btn-solicitar');
+                                const chkTerminos = document.getElementById('chk-terminos');
+                                const chkPrivacidad = document.getElementById('chk-privacidad');
+
+                                // Habilitar botón solo si ambos checkboxes están marcados
+                                function updateBtnState() {
+                                    btnSolicitar.disabled = !(chkTerminos.checked && chkPrivacidad.checked);
+                                }
+
+                                // Función de validación completa
+                                function validateAllFields() {
+                                    let isValid = true;
+                                    const errors = [];
+
+                                                                    // 1. Validar tipo de documento
+                                const tipoDocumento = document.getElementById('tipo-documento');
+                                const tipoDocumentoError = document.getElementById('tipoDocumentoError');
+                                if (!tipoDocumento.value) {
+                                    tipoDocumentoError.classList.remove('hidden');
+                                    isValid = false;
+                                    errors.push('Tipo de documento');
+                                } else {
+                                    tipoDocumentoError.classList.add('hidden');
+                                }
+
+                                // 2. Validar número de documento (solo números)
+                                const numeroDocumento = document.getElementById('numero-documento');
+                                const numeroDocumentoError = document.getElementById('numeroDocumentoError');
+                                if (!numeroDocumento.value.trim() || !/^\d+$/.test(numeroDocumento.value.trim())) {
+                                    numeroDocumentoError.textContent = !numeroDocumento.value.trim() ? 'Este campo es obligatorio' : 'Solo se permiten números';
+                                    numeroDocumentoError.classList.remove('hidden');
+                                    isValid = false;
+                                    errors.push('Número de documento');
+                                } else {
+                                    numeroDocumentoError.classList.add('hidden');
+                                }
+
+                                // 3. Validar nombre del cliente
+                                const nombreCliente = document.getElementById('nombre-cliente');
+                                const nombreClienteError = document.getElementById('nombreClienteError');
+                                if (!nombreCliente.value.trim()) {
+                                    nombreClienteError.classList.remove('hidden');
+                                    isValid = false;
+                                    errors.push('Nombre del cliente');
+                                } else {
+                                    nombreClienteError.classList.add('hidden');
+                                }
+
+                                                                    // 4. Validar celular (solo números, exactamente 9 dígitos)
+                                const celular = document.getElementById('celular');
+                                const celularError = document.getElementById('celularError');
+                                if (!celular.value.trim() || !/^\d{9}$/.test(celular.value.trim())) {
+                                    celularError.textContent = !celular.value.trim() ? 'Este campo es obligatorio' : 'Debe tener exactamente 9 dígitos numéricos';
+                                    celularError.classList.remove('hidden');
+                                    isValid = false;
+                                    errors.push('Celular');
+                                } else {
+                                    celularError.classList.add('hidden');
+                                }
+
+                                    // 5. Validar email
+                                    const email = document.getElementById('email');
+                                    const emailError = document.getElementById('emailError');
+                                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                    if (!emailRegex.test(email.value)) {
+                                        emailError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Correo electrónico');
+                                    } else {
+                                        emailError.classList.add('hidden');
+                                    }
+
+                                    // 6. Validar departamento
+                                    const departamento = document.getElementById('departamento');
+                                    const departamentoError = document.getElementById('departamentoError');
+                                    if (!departamento.value) {
+                                        departamentoError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Departamento');
+                                    } else {
+                                        departamentoError.classList.add('hidden');
+                                    }
+
+                                    // 7. Validar provincia
+                                    const provincia = document.getElementById('provincia');
+                                    const provinciaError = document.getElementById('provinciaError');
+                                    if (!provincia.value) {
+                                        provinciaError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Provincia');
+                                    } else {
+                                        provinciaError.classList.add('hidden');
+                                    }
+
+                                    // 8. Validar distrito
+                                    const distrito = document.getElementById('distrito-entrega');
+                                    const distritoError = document.getElementById('distritoEntregaError');
+                                    if (!distrito.value) {
+                                        distritoError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Distrito');
+                                    } else {
+                                        distritoError.classList.add('hidden');
+                                    }
+
+                                                                    // 9. Validar dirección
+                                const direccion = document.getElementById('direccion');
+                                const direccionError = document.getElementById('direccionError');
+                                if (!direccion.value.trim()) {
+                                    direccionError.classList.remove('hidden');
+                                    isValid = false;
+                                    errors.push('Dirección');
+                                } else {
+                                    direccionError.classList.add('hidden');
+                                }
+
+                                    // 10. Validar motivo
+                                    const motivo = document.getElementById('motivo');
+                                    const motivoError = document.getElementById('motivoError');
+                                    if (!motivo.value) {
+                                        motivoError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Motivo');
+                                    } else {
+                                        motivoError.classList.add('hidden');
+                                    }
+
+                                    // 11. Validar fecha de queja
+                                    const diaQueja = document.getElementById('dia-queja');
+                                    const mesQueja = document.getElementById('mes-queja');
+                                    const anoQueja = document.getElementById('ano-queja');
+                                    const fechaQuejaError = document.getElementById('fechaQuejaError');
+                                    if (!diaQueja.value || !mesQueja.value || !anoQueja.value) {
+                                        fechaQuejaError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Fecha de queja');
+                                    } else {
+                                        fechaQuejaError.classList.add('hidden');
+                                    }
+
+                                    // 12. Validar forma de respuesta
+                                    const formaRespuesta = document.getElementById('forma-respuesta');
+                                    const formaRespuestaError = document.getElementById('formaRespuestaError');
+                                    if (!formaRespuesta.value) {
+                                        formaRespuestaError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Forma de respuesta');
+                                    } else {
+                                        formaRespuestaError.classList.add('hidden');
+                                    }
+
+                                    // 13. Validar tienda de compra
+                                    const tiendaCompra = document.getElementById('tienda-compra');
+                                    const tiendaCompraError = document.getElementById('tiendaCompraError');
+                                    if (!tiendaCompra.value) {
+                                        tiendaCompraError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Tienda de compra');
+                                    } else {
+                                        tiendaCompraError.classList.add('hidden');
+                                    }
+
+                                                                    // 14. Validar número de orden (solo números enteros positivos)
+                                const numeroOrden = document.getElementById('numero-orden');
+                                const numeroOrdenError = document.getElementById('numeroOrdenError');
+                                if (!numeroOrden.value.trim() || !/^\d+$/.test(numeroOrden.value.trim()) || parseInt(numeroOrden.value) <= 0) {
+                                    numeroOrdenError.textContent = !numeroOrden.value.trim() ? 'Este campo es obligatorio' : 'Debe ser un número entero positivo';
+                                    numeroOrdenError.classList.remove('hidden');
+                                    isValid = false;
+                                    errors.push('Número de orden');
+                                } else {
+                                    numeroOrdenError.classList.add('hidden');
+                                }
+
+                                    // 15. Validar fecha del incidente
+                                    const diaIncidente = document.getElementById('dia-incidente');
+                                    const mesIncidente = document.getElementById('mes-incidente');
+                                    const anoIncidente = document.getElementById('ano-incidente');
+                                    const fechaError = document.getElementById('fechaError');
+                                    if (!diaIncidente.value || !mesIncidente.value || !anoIncidente.value) {
+                                        fechaError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Fecha del incidente');
+                                    } else {
+                                        fechaError.classList.add('hidden');
+                                    }
+
+                                    // 16. Validar nombre del producto
+                                    const nombreProducto = document.getElementById('nombre-producto');
+                                    const nombreProductoError = document.getElementById('nombreProductoError');
+                                    if (!nombreProducto.value.trim()) {
+                                        nombreProductoError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Nombre del producto/servicio');
+                                    } else {
+                                        nombreProductoError.classList.add('hidden');
+                                    }
+
+                                                                    // 17. Validar cantidad (solo números enteros positivos)
+                                const cantidad = document.getElementById('cantidad');
+                                const cantidadError = document.getElementById('cantidadError');
+                                if (!cantidad.value.trim() || !/^\d+$/.test(cantidad.value.trim()) || parseInt(cantidad.value) <= 0) {
+                                    cantidadError.textContent = !cantidad.value.trim() ? 'Este campo es obligatorio' : 'Debe ser un número entero positivo';
+                                    cantidadError.classList.remove('hidden');
+                                    isValid = false;
+                                    errors.push('Cantidad');
+                                } else {
+                                    cantidadError.classList.add('hidden');
+                                }
+
+                                    // 18. Validar detalle de la queja
+                                    const detalleQueja = document.getElementById('detalle-queja');
+                                    const detalleQuejaError = document.getElementById('detalleQuejaError');
+                                    if (!detalleQueja.value.trim() || detalleQueja.value.trim().length < 10) {
+                                        detalleQuejaError.textContent = !detalleQueja.value.trim() ? 'Este campo es obligatorio' : 'Describe con más detalle (mínimo 10 caracteres)';
+                                        detalleQuejaError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Detalle de la queja');
+                                    } else {
+                                        detalleQuejaError.classList.add('hidden');
+                                    }
+
+                                    // 19. Validar pedido del cliente
+                                    const pedidoCliente = document.getElementById('pedido-cliente');
+                                    const pedidoClienteError = document.getElementById('pedidoClienteError');
+                                    if (!pedidoCliente.value.trim() || pedidoCliente.value.trim().length < 10) {
+                                        pedidoClienteError.textContent = !pedidoCliente.value.trim() ? 'Este campo es obligatorio' : 'Describe con más detalle (mínimo 10 caracteres)';
+                                        pedidoClienteError.classList.remove('hidden');
+                                        isValid = false;
+                                        errors.push('Pedido del cliente');
+                                    } else {
+                                        pedidoClienteError.classList.add('hidden');
+                                    }
+
+                                    // 20. Validar checkboxes
+                                    if (!chkTerminos.checked || !chkPrivacidad.checked) {
+                                        isValid = false;
+                                        errors.push('Aceptar términos y condiciones');
+                                    }
+
+                                    return { isValid, errors };
+                                }
+
+                                // Event listeners para checkboxes
+                                chkTerminos.addEventListener('change', updateBtnState);
+                                chkPrivacidad.addEventListener('change', updateBtnState);
+
+                                // Event listener para el envío del formulario
+                                btnSolicitar.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    
+                                    const validation = validateAllFields();
+                                    
+                                    if (validation.isValid) {
+                                        alert('¡Formulario válido! Tu reclamación ha sido enviada correctamente.');
+                                        // Aquí puedes agregar el código para enviar el formulario
+                                        // form.submit();
+                                    } else {
+                                        alert(`Por favor, completa los siguientes campos:\n\n• ${validation.errors.join('\n• ')}`);
+                                        
+                                        // Scroll al primer campo con error
+                                        const firstError = document.querySelector('.text-red-500:not(.hidden)');
+                                        if (firstError) {
+                                            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                        }
+                                    }
+                                });
+
+                                // Inicializar estado del botón
+                                updateBtnState();
+
+                                // Validación en tiempo real para campos numéricos
+                                function addNumericValidation(inputId, errorId, minDigits, maxDigits, errorMessage) {
+                                    const input = document.getElementById(inputId);
+                                    const error = document.getElementById(errorId);
+                                    
+                                    if (!input || !error) return;
+                                    
+                                    input.addEventListener('input', function() {
+                                        // Solo permitir números
+                                        this.value = this.value.replace(/[^\d]/g, '');
+                                        
+                                        // Validar longitud si se especifica
+                                        if (maxDigits && this.value.length > maxDigits) {
+                                            this.value = this.value.slice(0, maxDigits);
+                                        }
+                                    });
+                                    
+                                    input.addEventListener('blur', function() {
+                                        if (!this.value.trim()) {
+                                            error.textContent = 'Este campo es obligatorio';
+                                            error.classList.remove('hidden');
+                                        } else if (minDigits && this.value.length < minDigits) {
+                                            error.textContent = errorMessage || `Debe tener al menos ${minDigits} dígitos`;
+                                            error.classList.remove('hidden');
+                                        } else if (maxDigits && this.value.length > maxDigits) {
+                                            error.textContent = errorMessage || `No debe exceder ${maxDigits} dígitos`;
+                                            error.classList.remove('hidden');
+                                        } else {
+                                            error.classList.add('hidden');
+                                        }
+                                    });
+                                }
+
+                                // Aplicar validación numérica a los campos específicos
+                                addNumericValidation('numero-documento', 'numeroDocumentoError');
+                                addNumericValidation('celular', 'celularError', 9, 9, 'Debe tener exactamente 9 dígitos');
+                                addNumericValidation('numero-orden', 'numeroOrdenError');
+                                addNumericValidation('cantidad', 'cantidadError');
+
+                                // Función genérica para poblar selectores de fecha
+                                function populateDateSelector(diaId, mesId, anoId, errorId) {
+                                    const diaSelect = document.getElementById(diaId);
+                                    const mesSelect = document.getElementById(mesId);
+                                    const anoSelect = document.getElementById(anoId);
+
+                                    if (!diaSelect || !mesSelect || !anoSelect) return;
+
+                                    // Poblar días (1-31)
+                                    for (let i = 1; i <= 31; i++) {
+                                        const option = document.createElement('option');
+                                        option.value = i.toString().padStart(2, '0');
+                                        option.textContent = i.toString();
+                                        diaSelect.appendChild(option);
+                                    }
+
+                                    // Poblar años (año actual - 10 hasta año actual)
+                                    const currentYear = new Date().getFullYear();
+                                    for (let i = currentYear; i >= currentYear - 10; i--) {
+                                        const option = document.createElement('option');
+                                        option.value = i.toString();
+                                        option.textContent = i.toString();
+                                        anoSelect.appendChild(option);
+                                    }
+
+                                    // Validar días según el mes seleccionado
+                                    function updateDaysInMonth() {
+                                        const mes = parseInt(mesSelect.value);
+                                        const ano = parseInt(anoSelect.value) || new Date().getFullYear();
+                                        const daysInMonth = new Date(ano, mes, 0).getDate();
+                                        
+                                        // Obtener el día seleccionado actualmente
+                                        const selectedDay = diaSelect.value;
+                                        
+                                        // Limpiar opciones de días
+                                        diaSelect.innerHTML = '<option value="" disabled selected>Día</option>';
+                                        
+                                        // Agregar días válidos para el mes
+                                        for (let i = 1; i <= daysInMonth; i++) {
+                                            const option = document.createElement('option');
+                                            option.value = i.toString().padStart(2, '0');
+                                            option.textContent = i.toString();
+                                            diaSelect.appendChild(option);
+                                        }
+                                        
+                                        // Restaurar el día seleccionado si es válido
+                                        if (selectedDay && parseInt(selectedDay) <= daysInMonth) {
+                                            diaSelect.value = selectedDay;
+                                        }
+                                    }
+
+                                    // Eventos para actualizar días cuando cambie mes o año
+                                    mesSelect.addEventListener('change', updateDaysInMonth);
+                                    anoSelect.addEventListener('change', updateDaysInMonth);
+                                }
+
+                                // Inicializar ambos selectores de fecha
+                                populateDateSelector('dia-queja', 'mes-queja', 'ano-queja', 'fechaQuejaError');
+                                populateDateSelector('dia-incidente', 'mes-incidente', 'ano-incidente', 'fechaError');
+                            });
+                        </script>
+
+                    </div>
+                </div>
+            </form>
+
+
+                
+        </div>
+    </section>              
+                            
+ <!-- pie de página -->
+    <footer class="bg-primary-30 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-4">
+                <!-- Columna 1 - Logo y Redes Sociales -->
+                <div class="mb-8 md:mb-0">
+                    <div class="mb-3 md:mb-11">
+                        <img src="./assets/images/logo-footer.png" alt="La Viga" class="w-40">
+                                </div>
+                                
+                    <h6 class="mb-3 text-sm md:text-xl/6 font-normal md:font-bold">Síguenos</h6>
+                    
+                    <div class="flex flex-row space-x-3 md:grid md:grid-cols-5 md:gap-2 md:space-x-0 w-full md:w-[200px]">
+                        <a href="#" class="w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-facebook-f text-base"></i>
+                        </a>
+                        <a href="#" class="w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-instagram text-base"></i>
+                        </a>
+                        <a href="#" class="w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-linkedin-in text-base"></i>
+                        </a>
+                        <a href="#" class="w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-x-twitter text-base"></i>
+                        </a>
+                        <a href="#" class="w-[34px] h-[34px] rounded-full bg-white flex items-center justify-center">
+                            <i class="text-primary-30 fab fa-tiktok text-base"></i>
+                        </a>
+                                </div>
+                            </div>
+                
+                <!-- Columna 2 - Contáctanos -->
+                <div class="mb-8 md:mb-0">
+                    <h6 class="mb-6">Contáctanos</h6>
+                    
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <div class="w-6 mr-3 flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-white text-lg"></i>
+                                </div>
+                            <a href="#" class="underline">Chatea con nosotros</a>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 mr-3 flex items-center justify-center">
+                                <img src="./assets/images/icon-phone.svg" alt="icon-phone" class="w-[18px] h-[18px]">
+                                </div>
+                            <a href="tel:+51448-7848">+51 448 7848</a>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 mr-3 flex items-center justify-center">
+                                <i class="far fa-envelope text-white text-lg"></i>
+                            </div>
+                            <a href="mailto:ventas@laviga.com">ventas@laviga.com</a>
+                        </li>
+                    </ul>
+                        </div>
+                
+                <!-- Columna 3 - Nosotros -->
+                <div class="mb-8 md:mb-0">
+                    <h6 class="mb-6">Nosotros</h6>
+                    <ul class="space-y-3 mb-6">
+                        <li><a href="#">¿Quienes somos?</a></li>
+                        <li><a href="#">Socios estratégicos</a></li>
+                    </ul>
+
+                    <h6 class="underline">Oficinas y centros de servicios</h6>
+                                </div>
+                                
+                <!-- Columna 4 - Atención al cliente -->
+                                <div>
+                    <h6 class="text-xl font-bold mb-6">Atención al cliente</h6>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Privacidad y seguridad</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Comprobantes electrónicos</a></li>
+                        
+                    </ul>
+                    
+                    
+                                </div>
+                <!-- Columna 5 - Pagos libro -->
+                                <div>
+                    <h6 class="mb-6 underline">Portal de pagos</h6>
+                    
+                    
+                    
+                    <div class="mb-4">
+                        <h5 class="text-xl font-bold mb-3"></h5>
+                        <a href="#">
+                            
+                        </a>
+                                </div>
+
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <div class="w-9 mr-3 flex items-center justify-center">
+                                <img src="./assets/images/libro-reclamaciones.png" alt="Libro de reclamaciones" class="w-9">
+                                </div>
+                            <h6><a href="#" class="text-xl font-bold">Libro de reclamaciones</a></h6>
+                        </li>
+                    </ul>
+                            </div>
+                                </div>
+                                
+            <!-- Separador -->
+            <div class="border-t border-white my-8"></div>
+            
+            <!-- Copyright -->
+                                <div>
+                <p class="text-sm text-center">Todos los derechos reservados La Viga S.A 2024</p>
+                                </div>
+                            </div>
+    </footer>
+
+
+<!-- Script de validación del formulario -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elementos del formulario
+        const form = document.getElementById('cotizacionForm');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        // Elementos de entrada
+        const rucInput = document.getElementById('ruc');
+        const razonSocialInput = document.getElementById('razon-social');
+        const nombreApellidosInput = document.getElementById('nombre-apellidos');
+        const cargoInput = document.getElementById('cargo');
+        const celularInput = document.getElementById('celular');
+        const emailInput = document.getElementById('email');
+        const actividadSelect = document.getElementById('actividad');
+        const detalleSelect = document.getElementById('detalle');
+        
+        // Elementos de error
+        const rucError = document.getElementById('rucError');
+        const razonSocialError = document.getElementById('razonSocialError');
+        const nombreApellidosError = document.getElementById('nombreApellidosError');
+        const cargoError = document.getElementById('cargoError');
+        const celularError = document.getElementById('celularError');
+        const emailError = document.getElementById('emailError');
+        const actividadError = document.getElementById('actividadError');
+        const detalleError = document.getElementById('detalleError');
+        
+        // Validar RUC (11 dígitos numéricos)
+        rucInput.addEventListener('input', function() {
+            if (!/^\d{11}$/.test(this.value) && this.value !== '') {
+                rucError.classList.remove('hidden');
+            } else {
+                rucError.classList.add('hidden');
+            }
+        });
+        
+        // Validar Razón Social (no vacío)
+        razonSocialInput.addEventListener('input', function() {
+            if (this.value.trim() === '') {
+                razonSocialError.classList.remove('hidden');
+            } else {
+                razonSocialError.classList.add('hidden');
+            }
+        });
+        
+        // Validar Nombre y Apellidos (no vacío)
+        nombreApellidosInput.addEventListener('input', function() {
+            if (this.value.trim() === '') {
+                nombreApellidosError.classList.remove('hidden');
+            } else {
+                nombreApellidosError.classList.add('hidden');
+            }
+        });
+        
+        // Validar Cargo (no vacío)
+        cargoInput.addEventListener('input', function() {
+            if (this.value.trim() === '') {
+                cargoError.classList.remove('hidden');
+            } else {
+                cargoError.classList.add('hidden');
+            }
+        });
+        
+        // Validar Celular (9 dígitos numéricos)
+        celularInput.addEventListener('input', function() {
+            if (!/^\d{9}$/.test(this.value) && this.value !== '') {
+                celularError.classList.remove('hidden');
+            } else {
+                celularError.classList.add('hidden');
+            }
+        });
+        
+        // Validar Email (formato correcto)
+        emailInput.addEventListener('input', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(this.value) && this.value !== '') {
+                emailError.classList.remove('hidden');
+            } else {
+                emailError.classList.add('hidden');
+            }
+        });
+        
+        // Validar Actividad (no vacío)
+        actividadSelect.addEventListener('change', function() {
+            if (!this.value) {
+                actividadError.classList.remove('hidden');
+            } else {
+                actividadError.classList.add('hidden');
+            }
+        });
+        
+        // Validar Detalle (no vacío)
+        detalleSelect.addEventListener('change', function() {
+            if (!this.value) {
+                detalleError.classList.remove('hidden');
+            } else {
+                detalleError.classList.add('hidden');
+            }
+        });
+        
+        // Validación en el envío del formulario
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Verificar RUC
+            if (!/^\d{11}$/.test(rucInput.value)) {
+                rucError.classList.remove('hidden');
+                rucInput.focus();
+                return false;
+            }
+            
+            // Verificar Razón Social
+            if (razonSocialInput.value.trim() === '') {
+                razonSocialError.classList.remove('hidden');
+                razonSocialInput.focus();
+                return false;
+            }
+            
+            // Verificar Actividad
+            if (!actividadSelect.value) {
+                actividadError.classList.remove('hidden');
+                actividadSelect.focus();
+                return false;
+            }
+            
+            // Verificar Detalle
+            if (!detalleSelect.value) {
+                detalleError.classList.remove('hidden');
+                detalleSelect.focus();
+                return false;
+            }
+            
+            // Verificar Nombre y Apellidos
+            if (nombreApellidosInput.value.trim() === '') {
+                nombreApellidosError.classList.remove('hidden');
+                nombreApellidosInput.focus();
+                return false;
+            }
+            
+            // Verificar Cargo
+            if (cargoInput.value.trim() === '') {
+                cargoError.classList.remove('hidden');
+                cargoInput.focus();
+                return false;
+            }
+            
+            // Verificar Celular
+            if (!/^\d{9}$/.test(celularInput.value)) {
+                celularError.classList.remove('hidden');
+                celularInput.focus();
+                return false;
+            }
+            
+            // Verificar Email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.classList.remove('hidden');
+                emailInput.focus();
+                return false;
+            }
+            
+            // Si todo está validado
+            alert('Formulario validado correctamente. ¡Listo para enviar!');
+            // form.submit(); // Descomenta esta línea para enviar el formulario
+        });
+    });
+</script>
+
+<!-- Script para Google Maps (personalizado para este proyecto) -->
+<script>
+    // Inicializa el mapa cuando se carga la API de Google Maps
+    function initMap() {
+        // Coordenadas iniciales (centro de Lima)
+        const initialPosition = { lat: -12.0464, lng: -77.0428 };
+        
+        // Crea el mapa
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: initialPosition,
+            zoom: 13,
+            mapTypeControl: false,
+            streetViewControl: false,
+            fullscreenControl: true,
+            zoomControl: true,
+            styles: [
+                {
+                    "featureType": "poi",
+                    "elementType": "labels",
+                    "stylers": [{ "visibility": "off" }]
+                }
+            ]
+        });
+        
+        // Crea un marcador personalizado usando AdvancedMarkerElement
+        const marker = new google.maps.marker.AdvancedMarkerElement({
+            map: map,
+            position: initialPosition,
+            gmpDraggable: true,
+            // Puedes personalizar el ícono aquí si lo deseas
+        });
+        
+        // Actualiza la dirección cuando se mueve el marcador
+        marker.addListener('dragend', function() {
+            const position = marker.position;
+            updateLocationAddress(position.lat, position.lng);
+        });
+        
+        // Click en el mapa para mover el marcador
+        map.addListener('click', function(event) {
+            marker.position = event.latLng;
+            updateLocationAddress(event.latLng.lat(), event.latLng.lng());
+        });
+        
+        // Función para actualizar la dirección basada en las coordenadas
+        function updateLocationAddress(lat, lng) {
+            const geocoder = new google.maps.Geocoder();
+            const latlng = { lat: lat, lng: lng };
+            
+            geocoder.geocode({ location: latlng }, function(results, status) {
+                if (status === 'OK' && results[0]) {
+                    document.getElementById('direccion-entrega').value = results[0].formatted_address;
+                    
+                    // Intentar extraer el distrito, provincia y departamento
+                    for (const component of results[0].address_components) {
+                        if (component.types.includes('administrative_area_level_2')) {
+                            // Esto podría ser el distrito o provincia
+                            // Aquí solo mostramos en consola, pero podrías actualizar los selects
+                            console.log('Distrito/Provincia:', component.long_name);
+                        }
+                        if (component.types.includes('administrative_area_level_1')) {
+                            // Esto probablemente sea el departamento
+                            console.log('Departamento:', component.long_name);
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Iniciar con la geolocalización del usuario si está disponible
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const userPosition = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                
+                map.setCenter(userPosition);
+                marker.position = userPosition;
+                updateLocationAddress(userPosition.lat, userPosition.lng);
+            });
+        }
+    }
+    
+    // Carga el script de Google Maps
+    function loadGoogleMaps() {
+        const script = document.createElement('script');
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAScOGMSXwO4pi5h2BeqnA4fnpSslAj4-M&callback=initMap&loading=async";
+        script.defer = true;
+        script.async = true;
+        document.head.appendChild(script);
+    }
+    
+    // Carga el mapa cuando se cargue la página
+    document.addEventListener('DOMContentLoaded', function() {
+        loadGoogleMaps();
+        
+        // Actualiza validación del formulario para incluir los nuevos campos
+        const form = document.getElementById('cotizacionForm');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        if (submitBtn) {
+            const originalClickHandler = submitBtn.onclick;
+            
+            submitBtn.onclick = function(e) {
+                e.preventDefault();
+                
+                // Verificar campos de entrega
+                const departamento = document.getElementById('departamento');
+                const provincia = document.getElementById('provincia');
+                const distritoEntrega = document.getElementById('distrito-entrega');
+                const direccionEntrega = document.getElementById('direccion-entrega');
+                
+                let isValid = true;
+                
+                if (!departamento.value) {
+                    document.getElementById('departamentoError').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('departamentoError').classList.add('hidden');
+                }
+                
+                if (!provincia.value) {
+                    document.getElementById('provinciaError').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('provinciaError').classList.add('hidden');
+                }
+                
+                if (!distritoEntrega.value) {
+                    document.getElementById('distritoEntregaError').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('distritoEntregaError').classList.add('hidden');
+                }
+                
+                if (!direccionEntrega.value.trim()) {
+                    document.getElementById('direccionEntregaError').classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    document.getElementById('direccionEntregaError').classList.add('hidden');
+                }
+                
+                if (!isValid) {
+                    return false;
+                }
+                
+                // Si todo está validado, llamar al manejador original si existe
+                if (typeof originalClickHandler === 'function') {
+                    return originalClickHandler.call(this, e);
+                }
+            };
+        }
+    });
+</script>
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- buscador -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Search suggestions functionality
+        initSearchSuggestions();
+        
+        function initSearchSuggestions() {
+            // Desktop search
+            const searchInput = document.getElementById('search-input');
+            const suggestionsDropdown = document.getElementById('search-suggestions');
+            
+            // Mobile search
+            const mobileSearchInput = document.getElementById('mobile-search-input');
+            const mobileSuggestionsDropdown = document.getElementById('mobile-search-suggestions');
+            
+            // Initialize desktop search if elements exist
+            if (searchInput && suggestionsDropdown) {
+                // Show suggestions when typing at least 3 characters
+                searchInput.addEventListener('input', function() {
+                    if (this.value.length >= 3) {
+                        suggestionsDropdown.classList.remove('hidden');
+                    } else {
+                        suggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', function(event) {
+                    // Check if click is outside the search bar and suggestions
+                    const isClickInside = searchInput.contains(event.target) || 
+                                        suggestionsDropdown.contains(event.target);
+                                        
+                    if (!isClickInside) {
+                        suggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions on Escape key
+                searchInput.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        suggestionsDropdown.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // Initialize mobile search if elements exist
+            if (mobileSearchInput && mobileSuggestionsDropdown) {
+                // Show suggestions when typing at least 3 characters
+                mobileSearchInput.addEventListener('input', function() {
+                    if (this.value.length >= 3) {
+                        mobileSuggestionsDropdown.classList.remove('hidden');
+                    } else {
+                        mobileSuggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', function(event) {
+                    // Check if click is outside the mobile search bar and suggestions
+                    const isClickInside = mobileSearchInput.contains(event.target) || 
+                                        mobileSuggestionsDropdown.contains(event.target);
+                                        
+                    if (!isClickInside) {
+                        mobileSuggestionsDropdown.classList.add('hidden');
+                    }
+                });
+                
+                // Hide suggestions on Escape key
+                mobileSearchInput.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        mobileSuggestionsDropdown.classList.add('hidden');
+                    }
+                });
+            }
+        }
+    });
+    </script>
+
+    <!-- mega menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize dropdowns (works for categories, brands and services)
+            function initDropdown(containerSelector) {
+                const mainItems = document.querySelectorAll(containerSelector + ' .navdesplegable-item');
+                const subItems = document.querySelectorAll(containerSelector + ' .navdesplegable-subitem');
+                
+                // Handle main item clicks
+                mainItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all main items in this dropdown
+                        mainItems.forEach(cat => cat.classList.remove('font-bold', 'active'));
+                        
+                        // Add active class to clicked item
+                        this.classList.add('font-bold', 'active');
+                        
+                        // Get the data attribute (either data-navdesplegable or data-categoria)
+                        const categoria = this.getAttribute('data-navdesplegable') || this.getAttribute('data-categoria');
+                        console.log(`Selected category: ${categoria}`);
+                        
+                        // Select the first subitem by default
+                        const firstSubItem = document.querySelector(containerSelector + ' .navdesplegable-subitem');
+                        if (firstSubItem) {
+                            subItems.forEach(subcat => subcat.classList.remove('font-bold', 'active'));
+                            firstSubItem.classList.add('font-bold', 'active');
+                        }
+                    });
+                });
+                
+                // Handle sub item clicks
+                subItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // Only prevent default if the link doesn't have an href or it's "#"
+                        const href = this.getAttribute('href');
+                        if (!href || href === '#') {
+                            e.preventDefault();
+                        }
+                        
+                        // Remove active class from all sub items in this dropdown
+                        subItems.forEach(subcat => subcat.classList.remove('font-bold', 'active'));
+                        
+                        // Add active class to clicked item
+                        this.classList.add('font-bold', 'active');
+                        
+                        // Get the data attribute (either data-subnavdesplegable or data-subcategoria)
+                        const subcategoria = this.getAttribute('data-subnavdesplegable') || this.getAttribute('data-subcategoria');
+                        console.log(`Selected subcategory: ${subcategoria}`);
+                    });
+                });
+            }
+            
+            // Initialize all dropdowns
+            initDropdown('.navigation li:nth-child(2)'); // Categories dropdown
+            initDropdown('.navigation li:nth-child(3)'); // Brands dropdown
+            initDropdown('.navigation li:nth-child(4)'); // Services dropdown
+            
+        });
+    </script>
+
+    
+
+</body>
+</html>

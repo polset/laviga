@@ -1639,6 +1639,145 @@
     </div>
 </section>
 
+<!-- Modal Agregar al Carrito -->
+<div id="cart-modal" class="fixed inset-0 z-50 hidden">
+    <!-- Overlay -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+    
+    <!-- Modal Container -->
+    <div class="fixed inset-0 flex items-center justify-center p-4">
+        <div class="relative bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <!-- Header del Modal -->
+            <div class="flex items-center justify-end">
+                
+                <button id="close-modal" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-neutral-10 transition-colors">
+                    <svg class="w-5 h-5 text-neutral-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Contenido del Modal -->
+            <div class="p-6">
+                <h3 class="text-base font-bold text-neutral-90 pb-3">Identifícate</h3>
+                <!-- Formulario -->
+                <form id="cart-form" class="space-y-6">
+                    <!-- Tipo de documento y Número de documento -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="modal-tipo-documento" class="block text-neutral-50 text-sm mb-2">Tipo de documento</label>
+                            <select id="modal-tipo-documento" name="modal-tipo-documento" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                <option value="" disabled selected>Selecciona documento</option>
+                                <option value="dni">DNI</option>
+                                <option value="carnet-extranjeria">Carnet de extranjería</option>
+                                <option value="pasaporte">Pasaporte</option>
+                                <option value="ruc">RUC</option>
+                            </select>
+                            <p id="modal-tipo-documento-error" class="text-red-500 text-xs mt-1 hidden">Selecciona un documento</p>
+                        </div>
+                        
+                        <div>
+                            <label for="modal-numero-documento" class="block text-neutral-50 text-sm mb-2">Número de documento</label>
+                            <input type="number" id="modal-numero-documento" name="modal-numero-documento" placeholder="Ingresa número de documento" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" required>
+                            <p id="modal-numero-documento-error" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Nombre del cliente y Celular -->
+                    <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <label for="modal-nombre-cliente" class="block text-neutral-50 text-sm mb-2">Nombre</label>
+                            <input type="text" id="modal-nombre-cliente" name="modal-nombre-cliente" placeholder="Ingresa nombre" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" required>
+                            <p id="modal-nombre-cliente-error" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                        </div>
+                        
+                    </div>
+
+                    <!-- actividad detalle -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="modal-tipo-documento" class="block text-neutral-50 text-sm mb-2">Actividad</label>
+                            <select id="modal-tipo-documento" name="modal-tipo-documento" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                <option value="" disabled selected>Selecciona actividad</option>
+                                <option value="ferreteria">Ferretería</option>
+                                <option value="progresol">Progresol</option>
+                                <option value="constructora">Constructora</option>
+                                <option value="contratista">Contratista</option>
+                                <option value="inmobiliaria">Inmobiliaria</option>
+                                <option value="industrial">Industrial</option>
+                            </select>
+                            <p id="modal-tipo-documento-error" class="text-red-500 text-xs mt-1 hidden">Selecciona una opción</p>
+                        </div>
+                        
+                        <div>
+                            <label for="modal-numero-documento" class="block text-neutral-50 text-sm mb-2">Detalle</label>
+                            <input type="text" id="modal-numero-documento" name="modal-numero-documento" placeholder="Ingresa detalle" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 placeholder-neutral-40 focus:outline-none focus:border-primary-00 transition" required>
+                            <p id="modal-numero-documento-error" class="text-red-500 text-xs mt-1 hidden">Este campo es obligatorio</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Divisor -->
+                    <div class="border-t border-dashed border-neutral-30"></div>
+
+                    <h3 class="text-base font-bold text-neutral-90 pb-3">Detalle de la entrega a</h3>
+                    <!-- Departamento, Provincia y Distrito -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 !mt-0">
+                        <div>
+                            <label for="modal-departamento" class="block text-neutral-50 text-sm mb-2">Departamento *</label>
+                            <select id="modal-departamento" name="modal-departamento" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                <option value="" disabled selected>Selecciona</option>
+                                <option value="arequipa">Arequipa</option>
+                                <option value="cusco">Cusco</option>
+                                <option value="la-libertad">La Libertad</option>
+                                <option value="lima">Lima</option>
+                                <option value="piura">Piura</option>
+                            </select>
+                            <p id="modal-departamento-error" class="text-red-500 text-xs mt-1 hidden">Selecciona un departamento</p>
+                        </div>
+                        
+                        <div>
+                            <label for="modal-provincia" class="block text-neutral-50 text-sm mb-2">Provincia *</label>
+                            <select id="modal-provincia" name="modal-provincia" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                <option value="" disabled selected>Selecciona</option>
+                                <option value="cañete">Cañete</option>
+                                <option value="callao">Callao</option>
+                                <option value="huaura">Huaura</option>
+                                <option value="huaral">Huaral</option>
+                                <option value="lima">Lima</option>
+                            </select>
+                            <p id="modal-provincia-error" class="text-red-500 text-xs mt-1 hidden">Selecciona una provincia</p>
+                        </div>
+                        
+                        <div>
+                            <label for="modal-distrito" class="block text-neutral-50 text-sm mb-2">Distrito *</label>
+                            <select id="modal-distrito" name="modal-distrito" class="w-full border border-neutral-30 rounded-lg px-4 py-3 text-neutral-90 focus:outline-none focus:border-primary-00 transition appearance-none bg-[url('/assets/images/chevron-down-gray.svg')] bg-no-repeat bg-[center_right_1rem]" required>
+                                <option value="" disabled selected>Selecciona</option>
+                                <option value="barranco">Barranco</option>
+                                <option value="miraflores">Miraflores</option>
+                                <option value="san-borja">San Borja</option>
+                                <option value="san-isidro">San Isidro</option>
+                                <option value="surco">Santiago de Surco</option>
+                            </select>
+                            <p id="modal-distrito-error" class="text-red-500 text-xs mt-1 hidden">Selecciona un distrito</p>
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+            </div>
+            
+            <!-- Footer del Modal -->
+            <div class="flex items-center justify-center p-6">
+                
+                <!-- Botón Agregar al carrito -->
+                <button id="modal-add-to-cart" type="button" class="add-to-cart max-w-[260px] bg-primary-00 text-white font-bold text-sm py-3 px-8 rounded-full h-12 flex-grow transition-all hover:bg-primary-20" disabled>
+                    Agregar al carrito
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- pie de página -->
 <footer class="bg-primary-30 text-white py-12">
     <div class="container mx-auto px-4">
@@ -2088,6 +2227,281 @@
                 }
             });
 
+        });
+    </script>
+
+    <!-- Modal del carrito -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos del modal
+            const modal = document.getElementById('cart-modal');
+            const openModalBtn = document.querySelector('.add-to-cart');
+            const closeModalBtn = document.getElementById('close-modal');
+            const cancelBtn = document.getElementById('modal-cancel');
+            const addToCartBtn = document.getElementById('modal-add-to-cart');
+            const overlay = modal.querySelector('.fixed.inset-0.bg-black');
+            
+            // Campos del formulario
+            const formFields = {
+                tipoDocumento: document.getElementById('modal-tipo-documento'),
+                numeroDocumento: document.getElementById('modal-numero-documento'),
+                nombreCliente: document.getElementById('modal-nombre-cliente'),
+                celular: document.getElementById('modal-celular'),
+                email: document.getElementById('modal-email'),
+                departamento: document.getElementById('modal-departamento'),
+                provincia: document.getElementById('modal-provincia'),
+                distrito: document.getElementById('modal-distrito'),
+                direccion: document.getElementById('modal-direccion'),
+                cantidad: document.getElementById('modal-cantidad'),
+                color: document.getElementById('modal-color')
+            };
+            
+            // Elementos de error
+            const errorElements = {
+                tipoDocumento: document.getElementById('modal-tipo-documento-error'),
+                numeroDocumento: document.getElementById('modal-numero-documento-error'),
+                nombreCliente: document.getElementById('modal-nombre-cliente-error'),
+                celular: document.getElementById('modal-celular-error'),
+                email: document.getElementById('modal-email-error'),
+                departamento: document.getElementById('modal-departamento-error'),
+                provincia: document.getElementById('modal-provincia-error'),
+                distrito: document.getElementById('modal-distrito-error'),
+                direccion: document.getElementById('modal-direccion-error'),
+                cantidad: document.getElementById('modal-cantidad-error'),
+                color: document.getElementById('modal-color-error')
+            };
+            
+            // Controles de cantidad
+            const decreaseBtn = document.getElementById('modal-decrease');
+            const increaseBtn = document.getElementById('modal-increase');
+            const cantidadInput = formFields.cantidad;
+            
+            // Abrir modal
+            openModalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Cerrar modal
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                resetForm();
+            }
+            
+            closeModalBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', closeModal);
+            
+            // Cerrar con Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+            
+            // Controles de cantidad
+            decreaseBtn.addEventListener('click', function() {
+                let value = parseInt(cantidadInput.value);
+                if (value > 1) {
+                    cantidadInput.value = value - 1;
+                    validateField('cantidad');
+                    checkFormValidity();
+                }
+            });
+            
+            increaseBtn.addEventListener('click', function() {
+                let value = parseInt(cantidadInput.value);
+                cantidadInput.value = value + 1;
+                validateField('cantidad');
+                checkFormValidity();
+            });
+            
+            // Validación en tiempo real para campos numéricos
+            function addNumericValidation(field, errorElement, minDigits, maxDigits, errorMessage) {
+                field.addEventListener('input', function() {
+                    // Solo permitir números
+                    this.value = this.value.replace(/[^\d]/g, '');
+                    
+                    // Validar longitud si se especifica
+                    if (maxDigits && this.value.length > maxDigits) {
+                        this.value = this.value.slice(0, maxDigits);
+                    }
+                    
+                    validateField(field.id.replace('modal-', ''));
+                    checkFormValidity();
+                });
+                
+                field.addEventListener('blur', function() {
+                    validateField(field.id.replace('modal-', ''));
+                    checkFormValidity();
+                });
+            }
+            
+            // Aplicar validación numérica
+            addNumericValidation(formFields.numeroDocumento, errorElements.numeroDocumento);
+            addNumericValidation(formFields.celular, errorElements.celular, 9, 9, 'Debe tener exactamente 9 dígitos');
+            
+            // Validación individual de campos
+            function validateField(fieldName) {
+                const field = formFields[fieldName];
+                const errorElement = errorElements[fieldName];
+                let isValid = true;
+                
+                if (!field || !errorElement) return true;
+                
+                switch (fieldName) {
+                    case 'tipoDocumento':
+                    case 'departamento':
+                    case 'provincia':
+                    case 'distrito':
+                    case 'color':
+                        if (!field.value) {
+                            errorElement.textContent = 'Este campo es obligatorio';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            errorElement.classList.add('hidden');
+                        }
+                        break;
+                        
+                    case 'numeroDocumento':
+                        if (!field.value.trim()) {
+                            errorElement.textContent = 'Este campo es obligatorio';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else if (!/^\d+$/.test(field.value.trim())) {
+                            errorElement.textContent = 'Solo se permiten números';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            errorElement.classList.add('hidden');
+                        }
+                        break;
+                        
+                    case 'nombreCliente':
+                    case 'direccion':
+                        if (!field.value.trim()) {
+                            errorElement.textContent = 'Este campo es obligatorio';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            errorElement.classList.add('hidden');
+                        }
+                        break;
+                        
+                    case 'celular':
+                        if (!field.value.trim()) {
+                            errorElement.textContent = 'Este campo es obligatorio';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else if (!/^\d{9}$/.test(field.value.trim())) {
+                            errorElement.textContent = 'Debe tener exactamente 9 dígitos numéricos';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            errorElement.classList.add('hidden');
+                        }
+                        break;
+                        
+                    case 'email':
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!field.value.trim()) {
+                            errorElement.textContent = 'Este campo es obligatorio';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else if (!emailRegex.test(field.value)) {
+                            errorElement.textContent = 'Ingresa un correo electrónico válido';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            errorElement.classList.add('hidden');
+                        }
+                        break;
+                        
+                    case 'cantidad':
+                        const cantidad = parseInt(field.value);
+                        if (!field.value || cantidad <= 0) {
+                            errorElement.textContent = 'Debe ser un número mayor a 0';
+                            errorElement.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            errorElement.classList.add('hidden');
+                        }
+                        break;
+                }
+                
+                return isValid;
+            }
+            
+            // Verificar validez completa del formulario
+            function checkFormValidity() {
+                let isFormValid = true;
+                
+                // Validar todos los campos
+                Object.keys(formFields).forEach(fieldName => {
+                    if (!validateField(fieldName)) {
+                        isFormValid = false;
+                    }
+                });
+                
+                // Habilitar/deshabilitar botón
+                addToCartBtn.disabled = !isFormValid;
+            }
+            
+            // Event listeners para validación en tiempo real
+            Object.keys(formFields).forEach(fieldName => {
+                const field = formFields[fieldName];
+                
+                if (field.tagName === 'SELECT') {
+                    field.addEventListener('change', function() {
+                        validateField(fieldName);
+                        checkFormValidity();
+                    });
+                } else {
+                    field.addEventListener('input', function() {
+                        validateField(fieldName);
+                        checkFormValidity();
+                    });
+                    
+                    field.addEventListener('blur', function() {
+                        validateField(fieldName);
+                        checkFormValidity();
+                    });
+                }
+            });
+            
+            // Resetear formulario
+            function resetForm() {
+                Object.values(formFields).forEach(field => {
+                    if (field.tagName === 'SELECT') {
+                        field.selectedIndex = 0;
+                    } else if (field.type === 'number') {
+                        field.value = field.id === 'modal-cantidad' ? '1' : '';
+                    } else {
+                        field.value = '';
+                    }
+                });
+                
+                Object.values(errorElements).forEach(errorElement => {
+                    errorElement.classList.add('hidden');
+                });
+                
+                addToCartBtn.disabled = true;
+            }
+            
+            // Manejar envío del formulario
+            addToCartBtn.addEventListener('click', function() {
+                if (!addToCartBtn.disabled) {
+                    // Aquí puedes agregar la lógica para agregar el producto al carrito
+                    alert('¡Producto agregado al carrito exitosamente!');
+                    closeModal();
+                }
+            });
+            
+            // Inicializar estado del botón
+            checkFormValidity();
         });
     </script>
     
